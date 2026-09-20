@@ -26,7 +26,8 @@ export default function CourseCatalog({
   completedModules = [],
   onGenerateCustomTopic,
   onStructureAndTeachCourse,
-  structuringCourseId = null
+  structuringCourseId = null,
+  onOpenUpload = null
 }) {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedDomainId, setSelectedDomainId] = useState('all');
@@ -229,8 +230,8 @@ export default function CourseCatalog({
         {/* Domain Sections & Course Cards */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
           
-          {/* Featured Ingested Document Curriculums (e.g. Sunil Gavaskar & uploaded files) */}
-          {courses && courses.filter(c => c.id === 'course-lesson1-sunil-gavaskar' || c.id?.startsWith('course-custom') || c.id?.startsWith('course-uploaded') || c.title?.includes('Sunil Gavaskar')).length > 0 && (
+          {/* User Built Courses & Curriculums */}
+          {courses && courses.length > 0 ? (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '8px' }}>
               <div style={{
                 display: 'flex',
@@ -243,17 +244,27 @@ export default function CourseCatalog({
                 border: '1px solid rgba(16, 185, 129, 0.3)'
               }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <span style={{ fontSize: '1.4rem' }}>⭐</span>
+                  <span style={{ fontSize: '1.4rem' }}>📚</span>
                   <div>
                     <h3 style={{ fontSize: '1.05rem', fontWeight: 800, color: '#ffffff', margin: 0, display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      Featured & Uploaded Lesson Material
+                      Active Courses & Built Curriculums ({courses.length})
                       <span style={{ fontSize: '0.72rem', background: '#10b981', color: '#090d16', padding: '2px 8px', borderRadius: '10px', fontWeight: 800 }}>READY</span>
                     </h3>
                     <p style={{ fontSize: '0.78rem', color: '#cbd5e1', margin: 0 }}>
-                      Authentic 3-tier master curriculum grounded directly in uploaded documents, literature chapters, and study guides.
+                      Authentic 3-tier master curriculums synthesized from your uploaded documents and custom topics.
                     </p>
                   </div>
                 </div>
+
+                {onOpenUpload && (
+                  <button
+                    onClick={onOpenUpload}
+                    className="btn btn-primary"
+                    style={{ fontSize: '0.78rem', padding: '6px 14px', display: 'flex', alignItems: 'center', gap: '6px' }}
+                  >
+                    <Sparkles size={13} /> + Upload Another Lesson
+                  </button>
+                )}
               </div>
 
               <div style={{
@@ -261,14 +272,14 @@ export default function CourseCatalog({
                 gridTemplateColumns: 'repeat(auto-fill, minmax(310px, 1fr))',
                 gap: '14px'
               }}>
-                {courses.filter(c => c.id === 'course-lesson1-sunil-gavaskar' || c.id?.startsWith('course-custom') || c.id?.startsWith('course-uploaded') || c.title?.includes('Sunil Gavaskar')).map(course => {
+                {courses.map(course => {
                   const isCurrentActive = activeCourse && (activeCourse.id === course.id || activeCourse.title === course.title);
                   return (
                     <div
                       key={course.id}
                       onClick={() => {
                         if (onStructureAndTeachCourse) {
-                          onStructureAndTeachCourse(course, course.domain || 'Languages & Literature');
+                          onStructureAndTeachCourse(course, course.domain || 'Academic Curriculum');
                         } else {
                           onSelectCourse(course, true);
                         }
@@ -297,7 +308,7 @@ export default function CourseCatalog({
                             background: 'rgba(16, 185, 129, 0.25)',
                             color: '#34d399'
                           }}>
-                            {course.domain || 'Languages & Literature'}
+                            {course.domain || 'Academic Curriculum'}
                           </span>
                           <span style={{ fontSize: '0.72rem', color: '#94a3b8', display: 'flex', alignItems: 'center', gap: '4px' }}>
                             <Clock size={12} /> {course.total_estimated_hours || 12}h Masterclass
@@ -373,7 +384,7 @@ export default function CourseCatalog({
                           onClick={(e) => {
                             e.stopPropagation();
                             if (onStructureAndTeachCourse) {
-                              onStructureAndTeachCourse(course, course.domain || 'Languages & Literature');
+                              onStructureAndTeachCourse(course, course.domain || 'Academic Curriculum');
                             } else {
                               onSelectCourse(course, true);
                             }
@@ -387,6 +398,47 @@ export default function CourseCatalog({
                   );
                 })}
               </div>
+            </div>
+          ) : (
+            /* Clean Empty State when courses = 0 */
+            <div className="glass-panel" style={{
+              padding: '48px 24px',
+              textAlign: 'center',
+              borderRadius: '16px',
+              border: '1px dashed rgba(99, 102, 241, 0.35)',
+              background: 'rgba(15, 23, 42, 0.6)',
+              marginBottom: '16px'
+            }}>
+              <div style={{
+                width: '64px',
+                height: '64px',
+                borderRadius: '50%',
+                background: 'rgba(99, 102, 241, 0.12)',
+                border: '1px solid rgba(99, 102, 241, 0.3)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                margin: '0 auto 16px'
+              }}>
+                <BookOpen size={28} color="#818cf8" />
+              </div>
+              <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#ffffff', marginBottom: '8px' }}>
+                All Courses Cleared — Ready to Build Step by Step
+              </h3>
+              <p style={{ fontSize: '0.88rem', color: '#94a3b8', maxWidth: '540px', margin: '0 auto 22px', lineHeight: 1.6 }}>
+                All previous sample courses have been removed. Upload your study material (PDF, Word, TXT, Excel) or enter a subject in the generator above to craft your first curriculum.
+              </p>
+              {onOpenUpload && (
+                <div style={{ display: 'flex', justifyContent: 'center', gap: '12px', flexWrap: 'wrap' }}>
+                  <button
+                    onClick={onOpenUpload}
+                    className="btn btn-primary"
+                    style={{ padding: '10px 22px', fontSize: '0.88rem', display: 'flex', alignItems: 'center', gap: '8px' }}
+                  >
+                    <Sparkles size={16} /> Upload Lesson Material (PDF / Word)
+                  </button>
+                </div>
+              )}
             </div>
           )}
 

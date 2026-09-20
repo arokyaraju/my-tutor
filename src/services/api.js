@@ -28,31 +28,32 @@ async function safeParseJson(res) {
 /**
  * Get courses from local storage
  */
-function getLocalCourses() {
+export function getLocalCourses() {
   try {
-    const saved = localStorage.getItem('mytutor_courses');
+    const saved = localStorage.getItem('mytutor_courses_v3');
     if (saved) {
-      const parsed = JSON.parse(saved);
-      const hasGavaskar = parsed.some(c => c.id === 'course-lesson1-sunil-gavaskar' || c.title?.includes('Sunil Gavaskar'));
-      if (!hasGavaskar && initialCourses && initialCourses.length > 0) {
-        const merged = [initialCourses[0], ...parsed.filter(c => !c.title?.includes('Lesson 1'))];
-        saveLocalCourses(merged);
-        return merged;
-      }
-      return parsed;
+      return JSON.parse(saved);
     }
   } catch (e) {
     console.warn('Could not read local courses:', e);
   }
-  return initialCourses;
+  return initialCourses || [];
 }
 
-function saveLocalCourses(courses) {
+export function saveLocalCourses(courses) {
   try {
-    localStorage.setItem('mytutor_courses', JSON.stringify(courses));
+    localStorage.setItem('mytutor_courses_v3', JSON.stringify(courses));
   } catch (e) {
     console.warn('Could not persist local courses:', e);
   }
+}
+
+export function clearAllLocalCourses() {
+  try {
+    localStorage.removeItem('mytutor_courses');
+    localStorage.removeItem('mytutor_courses_v2');
+    localStorage.removeItem('mytutor_courses_v3');
+  } catch (e) {}
 }
 
 export async function fetchCatalog() {

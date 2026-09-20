@@ -138,12 +138,22 @@ export default function App() {
           setCatalogDomains(catalogData.domains);
         }
 
+        // Clear legacy demo course cache if present
+        try {
+          localStorage.removeItem('mytutor_courses');
+          localStorage.removeItem('mytutor_courses_v2');
+        } catch (e) {}
+
         setCourses(fetchedCourses || []);
         if (fetchedCourses && fetchedCourses.length > 0) {
           const firstCourse = fetchedCourses[0];
           setActiveCourse(firstCourse);
           const firstMod = firstCourse.tiers?.basics?.[0] || firstCourse.tiers?.advanced?.[0];
           setActiveModule(firstMod);
+        } else {
+          setActiveCourse(null);
+          setActiveModule(null);
+          setActiveTab('courses');
         }
 
         if (studentData) {
@@ -655,6 +665,7 @@ export default function App() {
             onGenerateCustomTopic={handleGenerateCustomTopic}
             onStructureAndTeachCourse={handleStructureAndTeachCourse}
             structuringCourseId={structuringCourseId}
+            onOpenUpload={() => setIsUploadOpen(true)}
           />
         )}
 
@@ -718,6 +729,7 @@ export default function App() {
                 onGenerateCustomTopic={handleGenerateCustomTopic}
                 onStructureAndTeachCourse={handleStructureAndTeachCourse}
                 structuringCourseId={structuringCourseId}
+                onOpenUpload={() => setIsUploadOpen(true)}
               />
             )}
 
