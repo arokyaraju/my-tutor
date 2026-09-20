@@ -936,7 +936,7 @@ export default function App() {
 
         {/* Tab 2: Detailed Notes & 1, 2, 5, 10 Marker Blueprints */}
         {activeTab === 'notes' && (
-          <LessonNotesView activeModule={activeModule} />
+          <LessonNotesView activeModule={activeModule} activeCourse={activeCourse} />
         )}
 
         {/* Tab 3: Daily Dual Exam (Objective MCQs + Descriptive AI Rubric Evaluation) */}

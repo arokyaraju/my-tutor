@@ -14,7 +14,7 @@ import {
   Sparkles
 } from 'lucide-react';
 
-export default function LessonNotesView({ activeModule }) {
+export default function LessonNotesView({ activeModule, activeCourse }) {
   const [activeQuestionTab, setActiveQuestionTab] = useState('1m'); // '1m' | '2m' | '5m' | '10m' | 'all'
   const [expandedSolutions, setExpandedSolutions] = useState({});
   const [copiedId, setCopiedId] = useState(null);
@@ -45,6 +45,45 @@ export default function LessonNotesView({ activeModule }) {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
       
+      {/* Master Course Syllabus & 'How and WHY' Pedagogical Breakdown */}
+      {activeCourse?.course_description && (
+        <div className="glass-panel" style={{ padding: '16px 20px', borderLeft: '4px solid #6366f1' }}>
+          <details style={{ width: '100%' }}>
+            <summary style={{
+              cursor: 'pointer',
+              fontWeight: 700,
+              color: '#c7d2fe',
+              fontSize: '0.9rem',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              userSelect: 'none'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <BookOpen size={16} color="#818cf8" />
+                <span>{activeCourse.title} — Master "How and WHY" Course Syllabus</span>
+              </div>
+              <span style={{ fontSize: '0.74rem', color: '#818cf8', fontWeight: 600 }}>
+                Expand Syllabus
+              </span>
+            </summary>
+            <div style={{
+              marginTop: '12px',
+              paddingTop: '12px',
+              borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+              whiteSpace: 'pre-line',
+              lineHeight: '1.65',
+              fontSize: '0.83rem',
+              color: '#cbd5e1',
+              maxHeight: '320px',
+              overflowY: 'auto'
+            }}>
+              {activeCourse.course_description}
+            </div>
+          </details>
+        </div>
+      )}
+
       {/* Module Overview Header */}
       <div className="glass-panel" style={{ padding: '24px' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '14px', marginBottom: '16px' }}>

@@ -311,6 +311,44 @@ export default function CourseCatalog({
                         }}>
                           {course.scope_summary || 'Authentic curriculum with multi-tier examination syllabus and video lecture.'}
                         </p>
+
+                        {course.course_description && (
+                          <details 
+                            onClick={(e) => e.stopPropagation()} 
+                            style={{
+                              marginTop: '10px',
+                              background: 'rgba(0, 0, 0, 0.3)',
+                              borderRadius: '8px',
+                              padding: '8px 12px',
+                              border: '1px solid rgba(16, 185, 129, 0.2)'
+                            }}
+                          >
+                            <summary style={{
+                              fontSize: '0.74rem',
+                              fontWeight: 700,
+                              color: '#34d399',
+                              cursor: 'pointer',
+                              display: 'flex',
+                              alignItems: 'center',
+                              gap: '6px'
+                            }}>
+                              <span>📋</span> View Detailed "How and WHY" Syllabus Breakdown
+                            </summary>
+                            <div style={{
+                              marginTop: '8px',
+                              paddingTop: '8px',
+                              borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+                              fontSize: '0.74rem',
+                              color: '#cbd5e1',
+                              lineHeight: 1.55,
+                              whiteSpace: 'pre-line',
+                              maxHeight: '200px',
+                              overflowY: 'auto'
+                            }}>
+                              {course.course_description}
+                            </div>
+                          </details>
+                        )}
                       </div>
 
                       <div style={{
@@ -446,6 +484,47 @@ export default function CourseCatalog({
                             {course.focus}
                           </p>
                         )}
+
+                        {/* Practical 'How & WHY' Breakdown Accordion */}
+                        {course.course_description && (
+                          <details
+                            onClick={(e) => e.stopPropagation()}
+                            style={{
+                              marginTop: '8px',
+                              background: 'rgba(99, 102, 241, 0.07)',
+                              border: '1px solid rgba(99, 102, 241, 0.22)',
+                              borderRadius: '6px',
+                              fontSize: '0.73rem',
+                              color: '#cbd5e1',
+                              overflow: 'hidden'
+                            }}
+                          >
+                            <summary style={{
+                              padding: '5px 8px',
+                              cursor: 'pointer',
+                              fontWeight: 700,
+                              color: '#a5b4fc',
+                              display: 'flex',
+                              alignItems: 'center',
+                              gap: '5px',
+                              userSelect: 'none'
+                            }}>
+                              <BookOpen size={11} /> View How & WHY Course Breakdown
+                            </summary>
+                            <div style={{
+                              padding: '8px 10px',
+                              borderTop: '1px solid rgba(99, 102, 241, 0.15)',
+                              whiteSpace: 'pre-line',
+                              lineHeight: '1.45',
+                              maxHeight: '160px',
+                              overflowY: 'auto',
+                              color: '#94a3b8',
+                              fontSize: '0.71rem'
+                            }}>
+                              {course.course_description}
+                            </div>
+                          </details>
+                        )}
                       </div>
 
                       {/* Action Button & Status Bar */}
@@ -505,6 +584,44 @@ export default function CourseCatalog({
             <p style={{ fontSize: '0.86rem', color: '#cbd5e1', marginBottom: '12px', lineHeight: 1.5 }}>
               {activeCourse.scope_summary}
             </p>
+
+            {/* Practical 'How and WHY' Syllabus Breakdown */}
+            {activeCourse.course_description && (
+              <details style={{
+                marginTop: '12px',
+                marginBottom: '14px',
+                background: 'rgba(99, 102, 241, 0.08)',
+                border: '1px solid rgba(99, 102, 241, 0.25)',
+                borderRadius: '8px',
+                overflow: 'hidden'
+              }}>
+                <summary style={{
+                  padding: '10px 14px',
+                  cursor: 'pointer',
+                  fontWeight: 700,
+                  color: '#c7d2fe',
+                  fontSize: '0.84rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  userSelect: 'none'
+                }}>
+                  <BookOpen size={14} color="#818cf8" /> Full Practical Syllabus & "How and WHY" Course Description
+                </summary>
+                <div style={{
+                  padding: '14px 16px',
+                  borderTop: '1px solid rgba(99, 102, 241, 0.15)',
+                  whiteSpace: 'pre-line',
+                  lineHeight: '1.65',
+                  maxHeight: '260px',
+                  overflowY: 'auto',
+                  color: '#cbd5e1',
+                  fontSize: '0.82rem'
+                }}>
+                  {activeCourse.course_description}
+                </div>
+              </details>
+            )}
 
             {/* Prerequisites */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
