@@ -351,13 +351,31 @@ export default function App() {
   };
 
   // Select a new course or module
-  const handleSelectCourse = (course) => {
+  const handleSelectCourse = (courseOrId, autoLaunch = false) => {
+    const course = typeof courseOrId === 'string'
+      ? courses.find(c => c.id === courseOrId) || { id: courseOrId, title: courseOrId }
+      : courseOrId;
+
+    if (!course) return;
+
     setActiveCourse(course);
     const mod = course.tiers?.basics?.[0] || course.tiers?.advanced?.[0] || course.tiers?.expert?.[0];
     setActiveModule(mod);
     setActiveSectionIndex(0);
     setActiveMark(null);
     interruptTeacher();
+
+    if (autoLaunch) {
+      setActiveTab('classroom');
+      setIsCatalogOpen(false);
+      if (mod) {
+        setTimeout(() => {
+          const firstSec = mod.sections?.[0];
+          const ssml = firstSec?.speech_ssml || mod.speech_ssml;
+          if (ssml) speakSSML(ssml, 'explaining');
+        }, 400);
+      }
+    }
 
     // Reset video state & proactively fetch matching video lecture for this selected course
     setCurrentVideoLecture(null);
@@ -404,7 +422,54 @@ export default function App() {
   };
 
   // Click any of the 150+ courses: AI finds best content, structures 3-tier master curriculum, and starts elaborately teaching!
-  const handleStructureAndTeachCourse = async (course, domainName) => {
+  const handleStructureAndTeachCourse = async (courseOrId, domainName) => {
+    const course = typeof courseOrId === 'string'
+      ? courses.find(c => c.id === courseOrId) || { id: courseOrId, title: courseOrId }
+      : courseOrId;
+
+    if (!course) return;
+
+    // Fast-path: If course already has full structured tiers (e.g. Sunil Gavaskar, uploaded PDF, Excel Masterclass), immediately launch and teach!
+    if (course.tiers && (course.tiers.basics?.length > 0 || course.tiers.advanced?.length > 0 || course.tiers.expert?.length > 0)) {
+      setActiveCourse(course);
+      const firstMod = course.tiers?.basics?.[0] || 
+                       course.tiers?.advanced?.[0] || 
+                       course.tiers?.expert?.[0];
+      setActiveModule(firstMod);
+      setActiveSectionIndex(0);
+      setActiveMark(null);
+      interruptTeacher();
+      setActiveTab('classroom');
+      setIsCatalogOpen(false);
+
+      // Reset and auto-fetch matched video for this course
+      setCurrentVideoLecture(null);
+      setCurrentAILectureSummary(null);
+      setVideoQuizQuestions([]);
+
+      fetchVideoLectureContent({
+        courseId: course.id,
+        courseTitle: course.title,
+        domain: domainName || course.domainName || course.domain,
+        sectionIndex: 0
+      }).then(data => {
+        if (data?.video_lecture) setCurrentVideoLecture(data.video_lecture);
+        if (data?.video_quiz) setVideoQuizQuestions(data.video_quiz);
+        if (data?.ai_lecture_summary) setCurrentAILectureSummary(data.ai_lecture_summary);
+      }).catch(console.warn);
+
+      // AI Teacher Avatar begins teaching Section 1 immediately!
+      setTimeout(() => {
+        if (firstMod) {
+          const firstSec = firstMod.sections?.[0];
+          const intro = `<speak>Welcome to <emphasis level="strong">${course.title}</emphasis>! <break time="400ms"/> Let us begin Step 1 on <emphasis level="strong">${firstSec?.title || firstMod.title}</emphasis>. <break time="500ms"/> `;
+          const lessonContent = (firstSec?.speech_ssml || firstMod.speech_ssml || '').replace(/<\/?speak>/gi, '');
+          speakSSML(`${intro}${lessonContent}</speak>`, 'explaining');
+        }
+      }, 500);
+      return;
+    }
+
     const courseKey = course.id || course.title;
     setStructuringCourseId(courseKey);
     setStructuringMessage(`AI is structuring the 3-tier master curriculum for ${course.title}...`);
@@ -413,7 +478,7 @@ export default function App() {
       const response = await structureAndTeachCourse({
         courseId: course.id,
         courseTitle: course.title,
-        domain: domainName || course.domainName
+        domain: domainName || course.domainName || course.domain
       });
 
       const structuredCourse = response.course;
@@ -538,9 +603,8 @@ export default function App() {
         isOpen={isUploadOpen}
         onClose={() => setIsUploadOpen(false)}
         onCourseCreated={(course) => {
-          setCourses(prev => [course, ...prev]);
-          handleSelectCourse(course);
-          setActiveTab('classroom');
+          setCourses(prev => [course, ...prev.filter(c => c.id !== course.id)]);
+          handleStructureAndTeachCourse(course, course.domain || 'Uploaded Documents');
         }}
       />
 

@@ -266,7 +266,13 @@ export default function CourseCatalog({
                   return (
                     <div
                       key={course.id}
-                      onClick={() => onSelectCourse(course.id)}
+                      onClick={() => {
+                        if (onStructureAndTeachCourse) {
+                          onStructureAndTeachCourse(course, course.domain || 'Languages & Literature');
+                        } else {
+                          onSelectCourse(course, true);
+                        }
+                      }}
                       style={{
                         padding: '18px',
                         borderRadius: '14px',
@@ -364,6 +370,14 @@ export default function CourseCatalog({
                         <button
                           className={isCurrentActive ? "btn btn-primary" : "btn btn-secondary"}
                           style={{ padding: '6px 14px', fontSize: '0.78rem', display: 'flex', alignItems: 'center', gap: '6px', borderRadius: '8px' }}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            if (onStructureAndTeachCourse) {
+                              onStructureAndTeachCourse(course, course.domain || 'Languages & Literature');
+                            } else {
+                              onSelectCourse(course, true);
+                            }
+                          }}
                         >
                           <Sparkles size={13} />
                           {isCurrentActive ? 'Resume Classroom' : 'Launch Syllabus'}
