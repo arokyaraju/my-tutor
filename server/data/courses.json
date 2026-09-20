@@ -1,5 +1,889 @@
 [
   {
+    "id": "course-advanced-excel-mastery",
+    "title": "Advanced Microsoft Excel: Formulas, Lookup Systems, Dynamic Dashboards & Automation",
+    "domain_id": "domain-cs-tech",
+    "domain_name": "Computer & Information Sciences (Tech Stack)",
+    "domain": "Business Analytics & Enterprise Productivity",
+    "icon": "FileSpreadsheet",
+    "scope_summary": "Comprehensive corporate masterclass covering Excel fundamentals, cell referencing ($), deep VLOOKUP rules and error loops, INDEX+MATCH superiority, modern XLOOKUP, nested IF/IFS logic, text functions, COUNTIFS/SUMIFS with wildcards, Advanced Filters, Conditional Formatting formulas, the INDIRECT & ADDRESS ecosystem, dependent drop-downs, Date/Time serial science, dynamic OFFSET arrays, and interactive executive dashboards with Pivots and Slicers.",
+    "prerequisites": [
+      "Basic Computer Literacy",
+      "Familiarity with Spreadsheets & Data Entry"
+    ],
+    "total_estimated_hours": 24,
+    "video_lecture": {
+      "videoId": "Vl0H-qTclOg",
+      "title": "Advanced Microsoft Excel Full Masterclass: Formulas, Lookups, Dashboards & Automation",
+      "provider": "Financial Modeling & Corporate Analytics Institute",
+      "embedUrl": "https://www.youtube.com/embed/Vl0H-qTclOg?rel=0&modestbranding=1",
+      "watchUrl": "https://www.youtube.com/watch?v=Vl0H-qTclOg",
+      "duration": "45:20",
+      "key_timestamps": [
+        {
+          "time": "01:15",
+          "title": "Basic Terms, Grid Coordinates & Cell Referencing ($)"
+        },
+        {
+          "time": "10:30",
+          "title": "VLOOKUP Deep Dive, Rules, Limitations & IFERROR"
+        },
+        {
+          "time": "21:45",
+          "title": "INDEX + MATCH Superiority & XLOOKUP Mechanics"
+        },
+        {
+          "time": "32:10",
+          "title": "INDIRECT, Dependent Dropdowns & Dynamic OFFSET Dashboards"
+        }
+      ]
+    },
+    "tiers": {
+      "basics": [
+        {
+          "id": "excel-b1",
+          "tier": "basics",
+          "title": "Excel Foundations, Cell Referencing & Lookup Rules",
+          "estimated_minutes": 40,
+          "summary": "Master grid coordinate anatomy (cells, rows, columns, name box, formula bar), relative vs absolute cell locking ($), and deep VLOOKUP execution with rules, limitations, and multi-sheet references.",
+          "video_lecture": {
+            "videoId": "Vl0H-qTclOg",
+            "title": "Advanced Microsoft Excel Full Masterclass: Formulas, Lookups, Dashboards & Automation",
+            "provider": "Financial Modeling & Corporate Analytics Institute",
+            "embedUrl": "https://www.youtube.com/embed/Vl0H-qTclOg?rel=0&modestbranding=1",
+            "watchUrl": "https://www.youtube.com/watch?v=Vl0H-qTclOg",
+            "duration": "45:20",
+            "key_timestamps": [
+              {
+                "time": "01:15",
+                "title": "Basic Terms, Grid Coordinates & Cell Referencing ($)"
+              },
+              {
+                "time": "10:30",
+                "title": "VLOOKUP Deep Dive, Rules, Limitations & IFERROR"
+              },
+              {
+                "time": "21:45",
+                "title": "INDEX + MATCH Superiority & XLOOKUP Mechanics"
+              },
+              {
+                "time": "32:10",
+                "title": "INDIRECT, Dependent Dropdowns & Dynamic OFFSET Dashboards"
+              }
+            ]
+          },
+          "sections": [
+            {
+              "id": "excel-b1-sec1",
+              "title": "Grid Anatomy, Address Bar, Name Box & Absolute Referencing ($)",
+              "speech_ssml": "<speak>Welcome to the Advanced Excel Masterclass! <mark name=\"step1\"/> Before building complex models, we must understand how Excel handles memory and grid coordinates. <break time=\"300ms\"/> A cell is an intersection of a column and row. In the Name Box, you see its coordinate, like A1. <break time=\"300ms\"/> When copying formulas, relative references move, but using the dollar sign freezes the column, row, or both. Understanding locking is the bedrock of corporate modeling.</speak>",
+              "whiteboard_commands": [
+                {
+                  "mark_anchor": "step1",
+                  "action": "draw_rect",
+                  "x": 60,
+                  "y": 50,
+                  "width": 420,
+                  "height": 70,
+                  "label": "Cell Address Anatomy: Col [A-XFD] + Row [1-1048576]",
+                  "color": "#10b981"
+                },
+                {
+                  "mark_anchor": "step1",
+                  "action": "draw_hierarchy",
+                  "x": 80,
+                  "y": 150,
+                  "nodes": [
+                    {
+                      "label": "$A$1: Absolute (Both Locked)",
+                      "color": "#3b82f6"
+                    },
+                    {
+                      "label": "A$1: Row Locked (Col Floats)",
+                      "color": "#8b5cf6"
+                    },
+                    {
+                      "label": "$A1: Col Locked (Row Floats)",
+                      "color": "#f59e0b"
+                    },
+                    {
+                      "label": "A1: Relative (Both Float)",
+                      "color": "#ef4444"
+                    }
+                  ]
+                }
+              ],
+              "notes_content": "## 1. Grid Primitives & Address Anatomy\n- **Grid Limits**: 1,048,576 rows by 16,384 columns (A to XFD).\n- **Name Box**: Displays the active cell address or user-defined Named Range.\n- **Formula Bar vs In-Cell Display**: Shows the underlying constant or mathematical formula rather than the formatted evaluated output.\n- **Shortcut Keys**:\n  - `F4` / `Fn + F4`: Toggle cell locking modes (`A1` &rarr; `$A$1` &rarr; `A$1` &rarr; `$A1`).\n  - `Ctrl + ~` (Tilde): Toggle formula audit view across entire sheet.\n  - `F2`: Enter active cell edit mode with color-coded range highlights.\n\n## 2. Why Locking Cells is Essential: Real Office Example\nWhen calculating Sales Tax for a column of prices where Tax Rate is in cell `$C$1`:\n- **Correct**: `=B2 * $C$1` (dragged down, `B2` becomes `B3`, but `$C$1` stays frozen).\n- **Bug**: `=B2 * C1` (dragged down, multiplier moves to `C2` which is empty or text, giving `#VALUE!` or 0).",
+              "key_takeaways": [
+                "Always press F4 to anchor reference tables and lookup ranges before dragging formulas",
+                "Differentiate between raw constants and evaluated formula representations",
+                "Understand that column-only and row-only mixed references unlock multi-directional multiplication tables"
+              ]
+            },
+            {
+              "id": "excel-b1-sec2",
+              "title": "VLOOKUP Deep Dive: Rules, Limitations & Multi-Sheet Architecture",
+              "speech_ssml": "<speak>Now let us dissect VLOOKUP. <mark name=\"step2\"/> The four arguments are Lookup Value, Table Array, Column Index Number, and Range Lookup. <break time=\"300ms\"/> Rule number one: the lookup value MUST always reside in the leftmost column of the table array! <break time=\"300ms\"/> Rule number two: always lock your table array with dollar signs. Let us see how VLOOKUP functions across different sheets and separate workbooks.</speak>",
+              "whiteboard_commands": [
+                {
+                  "mark_anchor": "step2",
+                  "action": "draw_rect",
+                  "x": 50,
+                  "y": 40,
+                  "width": 440,
+                  "height": 75,
+                  "label": "=VLOOKUP(lookup_val, table_range, col_idx, [range_lookup])",
+                  "color": "#6366f1"
+                },
+                {
+                  "mark_anchor": "step2",
+                  "action": "draw_linked_nodes",
+                  "x": 70,
+                  "y": 150,
+                  "title": "VLOOKUP Left-to-Right Scan Vector",
+                  "nodes": [
+                    {
+                      "val": "Col 1: Lookup Key (MUST BE 1ST)",
+                      "next": "Col 2: Scan Field"
+                    },
+                    {
+                      "val": "Col 2: Scan Field",
+                      "next": "Col 3: Return Value"
+                    }
+                  ],
+                  "color": "#10b981"
+                }
+              ],
+              "notes_content": "## 1. Syntax & Parameter Rules\n```excel\n=VLOOKUP(lookup_value, table_array, col_index_num, [range_lookup])\n```\n1. **`lookup_value`**: The search key. Can be a cell reference or literal string.\n2. **`table_array`**: The target dataset. **Critical Rule**: The first column of this range MUST contain the lookup values. VLOOKUP cannot look to its left!\n3. **`col_index_num`**: Positive integer specifying which column to extract from the range (Column 1 = leftmost column).\n4. **`range_lookup`**:\n   - `FALSE` (or `0`): Exact match (mandatory for IDs, codes, names).\n   - `TRUE` (or `1`): Approximate match (requires lookup column to be sorted ascending; used for tax brackets and tiered commissions).\n\n## 2. Cross-Sheet & External Workbook References\n- **Same Workbook, Different Sheet**:\n  `=VLOOKUP(A2, 'Q3_Sales'!$A$2:$F$500, 4, FALSE)`\n- **External Closed Workbook**:\n  `=VLOOKUP(A2, '[Budget2026.xlsx]MasterData'!$A$2:$G$1000, 3, FALSE)`\n- **VLOOKUP Limitations**:\n  - Cannot fetch data to the left of the lookup column.\n  - Hardcoded column index numbers break when columns are inserted or deleted.\n  - Approximate match without sorting returns corrupt, incorrect records.",
+              "key_takeaways": [
+                "Always set the fourth parameter to 0 or FALSE unless doing tiered range lookups",
+                "Ensure the search key exists in the first column of the selected array",
+                "Never leave table_array unlocked ($) when copying down a ledger"
+              ]
+            },
+            {
+              "id": "excel-b1-sec3",
+              "title": "Handling Repeated Lookups, Error Handlers & Multi-Lookup Loops",
+              "speech_ssml": "<speak>What happens when a lookup value repeats multiple times? <mark name=\"step3\"/> VLOOKUP is greedy: it stops at the very first match and ignores all subsequent instances! <break time=\"300ms\"/> To retrieve second or third instances, we must create unique composite keys using helper columns. And when a value is not found, wrapping your formula in IFERROR keeps your reports clean and executive-ready.</speak>",
+              "whiteboard_commands": [
+                {
+                  "mark_anchor": "step3",
+                  "action": "draw_rect",
+                  "x": 60,
+                  "y": 50,
+                  "width": 420,
+                  "height": 70,
+                  "label": "Repeated Key Problem: VLOOKUP Stops at 1st Match!",
+                  "color": "#ef4444"
+                },
+                {
+                  "mark_anchor": "step3",
+                  "action": "draw_hierarchy",
+                  "x": 80,
+                  "y": 150,
+                  "nodes": [
+                    {
+                      "label": "Helper Col: Key & COUNTIF($A$2:A2, A2)",
+                      "color": "#10b981"
+                    },
+                    {
+                      "label": "VLOOKUP 1: Fetch 1st Instance",
+                      "color": "#3b82f6"
+                    },
+                    {
+                      "label": "IFERROR Wrap: Trap #N/A Cleanly",
+                      "color": "#f59e0b"
+                    }
+                  ]
+                }
+              ],
+              "notes_content": "## 1. The Duplicate Lookup Dilemma\n- Standard VLOOKUP scans top-to-bottom and terminates immediately upon finding the first occurrence.\n- **Solution - Helper Column with Instance Counter**:\n  In helper column A:\n  `=B2 & \"_\" & COUNTIF($B$2:B2, B2)`\n  Creates unique identifiers: `Apple_1`, `Apple_2`, `Apple_3`.\n  Lookup formula for the 2nd instance:\n  `=VLOOKUP(\"Apple_2\", $A$2:$E$100, 3, FALSE)`\n\n## 2. Error Handlers: ISERROR vs IFERROR\n- **`IFERROR(value, value_if_error)`**:\n  `=IFERROR(VLOOKUP(A2, $D$2:$F$100, 3, FALSE), \"Not Found\")`\n  - Evaluates expression once; clean, fast, and modern.\n- **`ISERROR(value)`**:\n  Returns TRUE for all error types (`#N/A`, `#VALUE!`, `#REF!`, `#DIV/0!`, `#NUM!`). Requires wrapping in `IF()`:\n  `=IF(ISERROR(VLOOKUP(...)), \"Error\", VLOOKUP(...))` (evaluates twice, slower on large datasets).\n- **VLOOKUP Cascading Fallback Loop**:\n  If an item might be in Table 1, Table 2, or Table 3:\n  `=IFERROR(VLOOKUP(A2, Table1, 2, 0), IFERROR(VLOOKUP(A2, Table2, 2, 0), IFERROR(VLOOKUP(A2, Table3, 2, 0), \"Item Not In Any Catalog\")))`",
+              "key_takeaways": [
+                "Understand that VLOOKUP only returns the first occurrence of a duplicate key",
+                "Use dynamic instance counting in helper columns to extract 2nd, 3rd, or nth duplicate instances",
+                "Nest IFERROR functions to build cascading lookup search fallbacks across multiple tables"
+              ]
+            },
+            {
+              "id": "excel-b1-sec4",
+              "title": "IF Architecture: Single IF, Logical AND/OR, Nested IFs & Modern IFS",
+              "speech_ssml": "<speak>Let us master decision logic in Excel. <mark name=\"step4\"/> The IF function takes a condition, a true outcome, and a false outcome. <break time=\"300ms\"/> We combine it with AND when all conditions must pass, and OR when any single condition is sufficient. For multi-tier business decisions, we nest IFs, or use the modern IFS function introduced in Office 365.</speak>",
+              "whiteboard_commands": [
+                {
+                  "mark_anchor": "step4",
+                  "action": "draw_tree",
+                  "title": "Nested IF vs Modern IFS Logic Tree",
+                  "nodes": [
+                    {
+                      "id": 1,
+                      "val": "Sales >= 100k?",
+                      "x": 260,
+                      "y": 60,
+                      "color": "#6366f1"
+                    },
+                    {
+                      "id": 2,
+                      "parent": 1,
+                      "val": "True: Tier 1 Bonus (20%)",
+                      "x": 140,
+                      "y": 150,
+                      "color": "#10b981"
+                    },
+                    {
+                      "id": 3,
+                      "parent": 1,
+                      "val": "False: Sales >= 50k?",
+                      "x": 380,
+                      "y": 150,
+                      "color": "#f59e0b"
+                    },
+                    {
+                      "id": 4,
+                      "parent": 3,
+                      "val": "True: Tier 2 (10%)",
+                      "x": 320,
+                      "y": 230,
+                      "color": "#38bdf8"
+                    },
+                    {
+                      "id": 5,
+                      "parent": 3,
+                      "val": "False: No Bonus (0%)",
+                      "x": 440,
+                      "y": 230,
+                      "color": "#ef4444"
+                    }
+                  ]
+                }
+              ],
+              "notes_content": "## 1. IF Syntax & Logical Connectors\n```excel\n=IF(logical_test, [value_if_true], [value_if_false])\n```\n\n- **IF with AND (All conditions must be TRUE)**:\n  `=IF(AND(B2 >= 100000, C2 >= 90), \"Top Performer\", \"Standard\")`\n- **IF with OR (At least one condition TRUE)**:\n  `=IF(OR(D2 = \"VIP\", E2 > 5000), \"Eligible for Discount\", \"Standard Pricing\")`\n\n## 2. Deep Nested IF vs Modern IFS Function\n- **Classic Nested IF (Hierarchical evaluation)**:\n  `=IF(A2 >= 90, \"A\", IF(A2 >= 80, \"B\", IF(A2 >= 70, \"C\", IF(A2 >= 60, \"D\", \"F\"))))`\n  *Rule*: Order conditions from strictest to lowest (or vice-versa) to prevent early false-positive evaluations.\n- **Modern `IFS` Function (Office 365 / 2021+)**:\n  Eliminates tedious closing parentheses:\n  `=IFS(A2 >= 90, \"A\", A2 >= 80, \"B\", A2 >= 70, \"C\", A2 >= 60, \"D\", TRUE, \"F\")`\n  *Note*: The final catch-all default condition is specified as `TRUE, \"Fallback Value\"`.",
+              "key_takeaways": [
+                "Construct nested IF conditions in strict numerical order (highest to lowest or lowest to highest)",
+                "Use AND/OR functions inside the logical_test argument to avoid redundant nested branches",
+                "Leverage the modern IFS function with a final TRUE catch-all to simplify complex business rules"
+              ]
+            }
+          ],
+          "exam_questions": [
+            {
+              "id": 1,
+              "type": "mcq",
+              "question": "Why does dragging =VLOOKUP(A2, B2:E50, 3, FALSE) down 50 rows produce #N/A or corrupt values in lower rows?",
+              "options": [
+                "Because the table_array range B2:E50 is relative and drifts down with each row (B3:E51, B4:E52), leaving out upper records",
+                "Because VLOOKUP cannot process more than 20 rows simultaneously",
+                "Because the third parameter must be a letter instead of a number",
+                "Because FALSE is only valid on the first row of a sheet"
+              ],
+              "correct_index": 0,
+              "marks": 1,
+              "explanation": "Without anchoring the lookup table ($B$2:$E$50) using the F4 key, the table boundary shifts down on every row, excluding earlier records."
+            },
+            {
+              "id": 2,
+              "type": "mcq",
+              "question": "When should you use the Match parameter '0' versus '1' in VLOOKUP?",
+              "options": [
+                "'0' performs an exact match for discrete codes/names; '1' performs approximate range matching on sorted numbers",
+                "'0' means search top-to-bottom; '1' means search bottom-to-top",
+                "'0' ignores capitalization; '1' enforces case-sensitivity",
+                "'0' looks up numbers only; '1' looks up text strings only"
+              ],
+              "correct_index": 0,
+              "marks": 2,
+              "explanation": "0 (or FALSE) guarantees an exact match regardless of sort order. 1 (or TRUE) requires ascending sort order for tiered range evaluation."
+            },
+            {
+              "id": 3,
+              "type": "descriptive",
+              "question": "Explain the fundamental limitations of VLOOKUP in enterprise financial reporting, and demonstrate how to handle multiple duplicate lookup values using a helper column.",
+              "marks": 5,
+              "answer_key": "VLOOKUP suffers from three main limitations: 1) Left-to-right restriction (cannot fetch data left of lookup key), 2) Column index fragility (inserting a column breaks index numbers), 3) First-match termination on duplicate keys. To handle duplicate instances, create a helper column concatenating the key with a running instance counter: =B2 & '_' & COUNTIF($B$2:B2, B2). This creates unique keys like 'Sales_1', 'Sales_2', allowing individual instances to be targeted directly.",
+              "essential_keywords": [
+                "left-to-right",
+                "first match",
+                "helper column",
+                "COUNTIF",
+                "column index",
+                "fragility"
+              ]
+            },
+            {
+              "id": 4,
+              "type": "descriptive",
+              "question": "Draft a production-ready Excel formula that performs a cascading multi-tier lookup across three separate departmental sheets ('Dept_East', 'Dept_West', 'Dept_North'), returning 'Item Missing Everywhere' if the search key in cell A2 is absent in all three.",
+              "marks": 10,
+              "answer_key": "=IFERROR(VLOOKUP(A2, 'Dept_East'!$A$2:$D$500, 3, FALSE), IFERROR(VLOOKUP(A2, 'Dept_West'!$A$2:$D$500, 3, FALSE), IFERROR(VLOOKUP(A2, 'Dept_North'!$A$2:$D$500, 3, FALSE), 'Item Missing Everywhere')))",
+              "essential_keywords": [
+                "IFERROR",
+                "VLOOKUP",
+                "Dept_East",
+                "Dept_West",
+                "Dept_North",
+                "nested",
+                "fallback"
+              ]
+            }
+          ]
+        }
+      ],
+      "advanced": [
+        {
+          "id": "excel-a1",
+          "tier": "advanced",
+          "title": "INDEX+MATCH Superiority, Modern XLOOKUP & Advanced Text Functions",
+          "estimated_minutes": 50,
+          "summary": "Master the industry gold standard: INDEX with standalone MATCH, bidirectional lookups, XLOOKUP mechanics, string parsing (LEFT, MID, RIGHT), and wildcard aggregation with COUNTIFS and SUMIFS.",
+          "video_lecture": {
+            "videoId": "Vl0H-qTclOg",
+            "title": "Advanced Microsoft Excel Full Masterclass: Formulas, Lookups, Dashboards & Automation",
+            "provider": "Financial Modeling & Corporate Analytics Institute",
+            "embedUrl": "https://www.youtube.com/embed/Vl0H-qTclOg?rel=0&modestbranding=1",
+            "watchUrl": "https://www.youtube.com/watch?v=Vl0H-qTclOg",
+            "duration": "45:20",
+            "key_timestamps": [
+              {
+                "time": "01:15",
+                "title": "Basic Terms, Grid Coordinates & Cell Referencing ($)"
+              },
+              {
+                "time": "10:30",
+                "title": "VLOOKUP Deep Dive, Rules, Limitations & IFERROR"
+              },
+              {
+                "time": "21:45",
+                "title": "INDEX + MATCH Superiority & XLOOKUP Mechanics"
+              },
+              {
+                "time": "32:10",
+                "title": "INDIRECT, Dependent Dropdowns & Dynamic OFFSET Dashboards"
+              }
+            ]
+          },
+          "sections": [
+            {
+              "id": "excel-a1-sec1",
+              "title": "Why INDEX + MATCH is Superior to VLOOKUP",
+              "speech_ssml": "<speak>Ask yourself: Why do senior analysts insist on INDEX MATCH over VLOOKUP? <mark name=\"step1\"/> First, INDEX MATCH looks in any direction: left, right, up, or down. Second, inserting a column will never break your model! <break time=\"300ms\"/> MATCH finds the exact row position number, and INDEX retrieves the value from that exact coordinate. Let us examine the parameters and what happens when row or column numbers are omitted.</speak>",
+              "whiteboard_commands": [
+                {
+                  "mark_anchor": "step1",
+                  "action": "draw_rect",
+                  "x": 50,
+                  "y": 40,
+                  "width": 440,
+                  "height": 75,
+                  "label": "=INDEX(return_column, MATCH(lookup_val, lookup_column, 0))",
+                  "color": "#10b981"
+                },
+                {
+                  "mark_anchor": "step1",
+                  "action": "draw_linked_nodes",
+                  "x": 70,
+                  "y": 150,
+                  "title": "INDEX MATCH Decoupled Architecture",
+                  "nodes": [
+                    {
+                      "val": "MATCH: Coordinates Finder (Row 14)",
+                      "next": "INDEX: Data Retriever ($F$2:$F$100)"
+                    },
+                    {
+                      "val": "INDEX: Data Retriever ($F$2:$F$100)",
+                      "next": "Extracted Value: $84,200"
+                    }
+                  ],
+                  "color": "#6366f1"
+                }
+              ],
+              "notes_content": "## 1. Anatomy of INDEX and MATCH\n- **`INDEX(array, row_num, [col_num])`**:\n  Returns the value at the intersection of specified row and column coordinates.\n  - If selecting a single column array `$E$2:$E$100`, you only need the `row_num` argument!\n  - If `col_num` or `row_num` is set to `0` or omitted on a 2D matrix, INDEX returns the entire row or column array!\n- **`MATCH(lookup_value, lookup_array, [match_type])`**:\n  Returns the relative numerical position of an item (e.g., Row 4).\n  - `match_type = 0`: Exact match.\n\n## 2. The 5 Crucial Reasons Why INDEX + MATCH Beats VLOOKUP\n1. **Bidirectional Lookups**: Can look to the left, right, top, or bottom.\n2. **Structural Immunity**: Inserting or deleting columns in the worksheet will never disrupt the formula because references are direct range pointers, not hardcoded integers.\n3. **Memory & Calculation Speed**: VLOOKUP loads the entire table matrix into memory. INDEX MATCH only touches two specific 1D column vectors.\n4. **Two-Way Dynamic Matrix Lookups (Row & Column Intersection)**:\n   `=INDEX($B$2:$M$50, MATCH(\"Product_X\", $A$2:$A$50, 0), MATCH(\"August\", $B$1:$M$1, 0))`\n5. **No Column Counting Errors**: No need to manually count 45 columns across large sheets.",
+              "key_takeaways": [
+                "INDEX MATCH decouples the lookup coordinate search from the return data vector",
+                "Never hardcode column index integers when building durable enterprise spreadsheets",
+                "Use two-way INDEX(matrix, MATCH_row, MATCH_col) to query dynamic financial matrices"
+              ]
+            },
+            {
+              "id": "excel-a1-sec2",
+              "title": "Modern XLOOKUP: The All-In-One Lookup Evolution",
+              "speech_ssml": "<speak>In modern Excel, Microsoft introduced XLOOKUP. <mark name=\"step2\"/> XLOOKUP unifies VLOOKUP, HLOOKUP, and INDEX MATCH into a single, clean function. <break time=\"300ms\"/> It defaults to exact match, searches left and right natively, includes built-in error handling, and can even search backwards from bottom to top to find the latest transaction!</speak>",
+              "whiteboard_commands": [
+                {
+                  "mark_anchor": "step2",
+                  "action": "draw_rect",
+                  "x": 40,
+                  "y": 50,
+                  "width": 460,
+                  "height": 75,
+                  "label": "=XLOOKUP(lookup, lookup_arr, return_arr, [if_not_found], [match_mode], [search_mode])",
+                  "color": "#3b82f6"
+                },
+                {
+                  "mark_anchor": "step2",
+                  "action": "draw_hierarchy",
+                  "x": 60,
+                  "y": 150,
+                  "nodes": [
+                    {
+                      "label": "1. Native Exact Match Default",
+                      "color": "#10b981"
+                    },
+                    {
+                      "label": "2. Native If_Not_Found Argument",
+                      "color": "#8b5cf6"
+                    },
+                    {
+                      "label": "3. Reverse Search: search_mode = -1",
+                      "color": "#f59e0b"
+                    },
+                    {
+                      "label": "4. Horizontal & Vertical Unification",
+                      "color": "#6366f1"
+                    }
+                  ]
+                }
+              ],
+              "notes_content": "## 1. Complete XLOOKUP Signature\n```excel\n=XLOOKUP(lookup_value, lookup_array, return_array, [if_not_found], [match_mode], [search_mode])\n```\n\n1. **`lookup_value`**: The search key.\n2. **`lookup_array`**: The single column or row vector to search.\n3. **`return_array`**: The column or row vector to return data from.\n4. **`if_not_found`**: Custom return value when no match is found (eliminates wrapping with `IFERROR`).\n5. **`match_mode`**:\n   - `0`: Exact match (Default).\n   - `-1`: Exact match or next smaller item.\n   - `1`: Exact match or next larger item.\n   - `2`: Wildcard match (`*`, `?`).\n6. **`search_mode`**:\n   - `1`: Search first-to-last (top-down).\n   - `-1`: Search last-to-first (bottom-up &rarr; extracts the most recent transaction entry!).",
+              "key_takeaways": [
+                "XLOOKUP eliminates the need for separate IFERROR wrapping with its 4th argument",
+                "Set search_mode to -1 to effortlessly locate the latest chronological transaction in an unsorted ledger",
+                "XLOOKUP handles both vertical and horizontal arrays seamlessly"
+              ]
+            },
+            {
+              "id": "excel-a1-sec3",
+              "title": "Text Extraction & Cleansing: MID, LEFT, RIGHT, FIND & LEN Integration",
+              "speech_ssml": "<speak>Corporate data is almost always messy. <mark name=\"step3\"/> Account numbers, order codes, and employee IDs are often fused together. <break time=\"300ms\"/> By mastering LEFT, RIGHT, MID, FIND, and LEN, you can dynamically slice text strings of any length and feed clean keys into your lookup engines.</speak>",
+              "whiteboard_commands": [
+                {
+                  "mark_anchor": "step3",
+                  "action": "draw_rect",
+                  "x": 60,
+                  "y": 50,
+                  "width": 420,
+                  "height": 70,
+                  "label": "Text Splitting: Dynamic MID + FIND Architecture",
+                  "color": "#f59e0b"
+                },
+                {
+                  "mark_anchor": "step3",
+                  "action": "draw_hierarchy",
+                  "x": 80,
+                  "y": 150,
+                  "nodes": [
+                    {
+                      "label": "LEFT(text, num_chars): Start from Left",
+                      "color": "#10b981"
+                    },
+                    {
+                      "label": "RIGHT(text, num_chars): Start from Right",
+                      "color": "#3b82f6"
+                    },
+                    {
+                      "label": "MID(text, start, num): Dynamic Slice",
+                      "color": "#8b5cf6"
+                    },
+                    {
+                      "label": "FIND(find_text, within_text): Coordinate Locator",
+                      "color": "#ef4444"
+                    }
+                  ]
+                }
+              ],
+              "notes_content": "## 1. Core Text Manipulation Primitives\n- **`LEFT(text, [num_chars])`**: Extracts characters from start.\n- **`RIGHT(text, [num_chars])`**: Extracts characters from end.\n- **`MID(text, start_num, num_chars)`**: Extracts a substring starting at any specified index.\n- **`LEN(text)`**: Returns total character count.\n- **`FIND(find_text, within_text, [start_num])`**: Returns starting 1-based character position (case-sensitive).\n- **`SEARCH(find_text, within_text)`**: Case-insensitive character position locator.\n\n## 2. Real Office Formula: Extracting Substrings Between Delimiters\nGiven invoice strings like `INV-84920-US` where code length varies:\n- **Extracting dynamic ID between hyphens**:\n```excel\n=MID(A2, FIND(\"-\", A2) + 1, FIND(\"-\", A2, FIND(\"-\", A2) + 1) - FIND(\"-\", A2) - 1)\n```\n- **Extracting File Name from Full Path**:\n```excel\n=RIGHT(A2, LEN(A2) - FIND(\"@\", SUBSTITUTE(A2, \"\\\", \"@\", LEN(A2) - LEN(SUBSTITUTE(A2, \"\\\", \"\")))))\n```",
+              "key_takeaways": [
+                "Combine FIND with MID to extract variable-length codes between delimiters",
+                "Use TRIM and CLEAN to purge non-breaking whitespace before performing lookups",
+                "Nest TEXT functions with IFERROR and INDEX MATCH for robust data cleansing"
+              ]
+            },
+            {
+              "id": "excel-a1-sec4",
+              "title": "Aggregation Family with Wildcards: COUNTIFS, SUMIFS, MAXIFS & Wildcard Magic",
+              "speech_ssml": "<speak>Now let us explore multi-condition analytics. <mark name=\"step4\"/> Notice the difference between SUMIF and SUMIFS: in SUMIFS, the sum range comes FIRST! <break time=\"300ms\"/> And with wildcards like the asterisk and question mark, you can aggregate sales matching partial strings, such as all product codes ending in 2026.</speak>",
+              "whiteboard_commands": [
+                {
+                  "mark_anchor": "step4",
+                  "action": "draw_rect",
+                  "x": 60,
+                  "y": 50,
+                  "width": 420,
+                  "height": 70,
+                  "label": "=SUMIFS(sum_range, crit_range1, crit1, [crit_range2, crit2]...)",
+                  "color": "#10b981"
+                },
+                {
+                  "mark_anchor": "step4",
+                  "action": "draw_hierarchy",
+                  "x": 80,
+                  "y": 150,
+                  "nodes": [
+                    {
+                      "label": "* (Asterisk): Matches ANY string of characters",
+                      "color": "#3b82f6"
+                    },
+                    {
+                      "label": "? (Question Mark): Matches EXACTLY ONE character",
+                      "color": "#f59e0b"
+                    },
+                    {
+                      "label": "~ (Tilde): Escapes literal * or ? marks",
+                      "color": "#8b5cf6"
+                    }
+                  ]
+                }
+              ],
+              "notes_content": "## 1. Syntax Comparison\n- **`SUMIF(range, criteria, [sum_range])`** (Legacy single-condition; sum_range is last).\n- **`SUMIFS(sum_range, criteria_range1, criteria1, criteria_range2, criteria2, ...)`** (Sum range is ALWAYS FIRST).\n\n## 2. The Power of Wildcard Operators\n- **`*` (Asterisk)**: Represents any number of characters (zero or more).\n  - `SUMIFS(C:C, A:A, \"*London*\")`: Sums sales for any branch with \"London\" anywhere in its name.\n  - `COUNTIFS(B:B, \"PROD*\")`: Counts items beginning with \"PROD\".\n- **`?` (Question Mark)**: Represents exactly one single character.\n  - `COUNTIFS(A:A, \"??-2026\")`: Matches two-letter prefixes followed by `-2026` (e.g., `US-2026`, `UK-2026`).\n- **Combining VLOOKUP with SUMIF**:\n  Fetch customer region with VLOOKUP, then summarize regional revenue using SUMIFS.",
+              "key_takeaways": [
+                "Remember that SUMIFS places the sum_range at the very beginning of the parameter list",
+                "Use the asterisk wildcard for partial-match keyword aggregations across ERP descriptions",
+                "Ensure all criteria ranges in SUMIFS possess identical row dimensions to avoid #VALUE! errors"
+              ]
+            }
+          ],
+          "exam_questions": [
+            {
+              "id": 1,
+              "type": "mcq",
+              "question": "Why does inserting a new column between columns B and C break =VLOOKUP(A2, B:E, 3, FALSE) but NOT =INDEX(D:D, MATCH(A2, B:B, 0))?",
+              "options": [
+                "Because VLOOKUP relies on a hardcoded column integer (3) that now points to the wrong column, whereas INDEX explicitly references range pointers that automatically adjust with grid changes",
+                "Because INDEX does not use worksheet memory",
+                "Because MATCH converts all columns to rows",
+                "Because VLOOKUP disables dynamic range tracking"
+              ],
+              "correct_index": 0,
+              "marks": 1,
+              "explanation": "Hardcoded column index numbers cannot track column insertion. INDEX MATCH points directly to column ranges, which Excel updates automatically when columns shift."
+            },
+            {
+              "id": 2,
+              "type": "mcq",
+              "question": "In the XLOOKUP function, what is the effect of configuring the 6th argument (search_mode) as -1?",
+              "options": [
+                "It searches the array in reverse order (bottom-to-top), returning the latest chronologically entered record",
+                "It converts the returned values to negative numbers",
+                "It returns an error if any cell is negative",
+                "It skips all blank cells"
+              ],
+              "correct_index": 0,
+              "marks": 2,
+              "explanation": "search_mode = -1 instructs XLOOKUP to scan from bottom to top, making it trivial to extract the most recent transaction without sorting the data."
+            },
+            {
+              "id": 3,
+              "type": "descriptive",
+              "question": "Explain the architectural difference between SUMIF and SUMIFS parameter structures, and show how to use wildcards to sum revenues for all transactions containing 'Enterprise' anywhere in column B where the transaction date in column C is in year 2026.",
+              "marks": 5,
+              "answer_key": "SUMIF takes (range, criteria, [sum_range]), placing the sum_range last. SUMIFS takes (sum_range, criteria_range1, criteria1, ...), placing the sum_range first. To sum revenues in column D matching 'Enterprise' in column B during 2026: =SUMIFS(D:D, B:B, '*Enterprise*', C:C, '>=2026-01-01', C:C, '<=2026-12-31'). The asterisk wildcards allow matching any string containing 'Enterprise' regardless of leading or trailing characters.",
+              "essential_keywords": [
+                "SUMIFS",
+                "sum_range first",
+                "wildcard",
+                "*Enterprise*",
+                "date boundaries",
+                "criteria_range"
+              ]
+            },
+            {
+              "id": 4,
+              "type": "descriptive",
+              "question": "Write an Excel formula using INDEX and MATCH that performs a dynamic two-way matrix lookup, finding the revenue intersection for a specified Region (cell B1) across rows and a specified Quarter (cell B2) across column headers.",
+              "marks": 10,
+              "answer_key": "=INDEX($C$3:$N$100, MATCH(B1, $A$3:$A$100, 0), MATCH(B2, $C$2:$N$2, 0)). The first MATCH scans vertical column A to find the row index of Region B1. The second MATCH scans horizontal row 2 to find the column index of Quarter B2. INDEX returns the precise cell at the intersection of those coordinates in the matrix $C$3:$N$100.",
+              "essential_keywords": [
+                "INDEX",
+                "MATCH",
+                "two-way lookup",
+                "row coordinate",
+                "column coordinate",
+                "intersection"
+              ]
+            }
+          ]
+        }
+      ],
+      "expert": [
+        {
+          "id": "excel-e1",
+          "tier": "expert",
+          "title": "Dynamic Modeling, INDIRECT, OFFSET, Advanced Filters & Executive Dashboards",
+          "estimated_minutes": 60,
+          "summary": "Build corporate-grade dynamic tools: Advanced Filters with complex Boolean logic, formula-driven Conditional Formatting, the INDIRECT/ADDRESS ecosystem, cascading drop-downs, Date/Time serial science, dynamic OFFSET arrays, and interactive Pivot Slicer dashboards.",
+          "video_lecture": {
+            "videoId": "Vl0H-qTclOg",
+            "title": "Advanced Microsoft Excel Full Masterclass: Formulas, Lookups, Dashboards & Automation",
+            "provider": "Financial Modeling & Corporate Analytics Institute",
+            "embedUrl": "https://www.youtube.com/embed/Vl0H-qTclOg?rel=0&modestbranding=1",
+            "watchUrl": "https://www.youtube.com/watch?v=Vl0H-qTclOg",
+            "duration": "45:20",
+            "key_timestamps": [
+              {
+                "time": "01:15",
+                "title": "Basic Terms, Grid Coordinates & Cell Referencing ($)"
+              },
+              {
+                "time": "10:30",
+                "title": "VLOOKUP Deep Dive, Rules, Limitations & IFERROR"
+              },
+              {
+                "time": "21:45",
+                "title": "INDEX + MATCH Superiority & XLOOKUP Mechanics"
+              },
+              {
+                "time": "32:10",
+                "title": "INDIRECT, Dependent Dropdowns & Dynamic OFFSET Dashboards"
+              }
+            ]
+          },
+          "sections": [
+            {
+              "id": "excel-e1-sec1",
+              "title": "Advanced Filter Mechanics: In-Place vs Copy, AND/OR Criteria & Unique Records",
+              "speech_ssml": "<speak>Advanced Filter is one of Excel's most powerful data extraction engines. <mark name=\"step1\"/> Unlike regular filters, it lets you define complex criteria ranges on your worksheet. <break time=\"300ms\"/> Headers in the same row execute an AND condition; headers in stacked rows execute an OR condition. You can extract unique records directly to a new location without affecting your source table!</speak>",
+              "whiteboard_commands": [
+                {
+                  "mark_anchor": "step1",
+                  "action": "draw_rect",
+                  "x": 50,
+                  "y": 50,
+                  "width": 440,
+                  "height": 75,
+                  "label": "Advanced Filter: In-Place vs Copy to Another Location",
+                  "color": "#6366f1"
+                },
+                {
+                  "mark_anchor": "step1",
+                  "action": "draw_hierarchy",
+                  "x": 70,
+                  "y": 150,
+                  "nodes": [
+                    {
+                      "label": "Same Row Criteria = Boolean AND",
+                      "color": "#10b981"
+                    },
+                    {
+                      "label": "Stacked Row Criteria = Boolean OR",
+                      "color": "#f59e0b"
+                    },
+                    {
+                      "label": "'Unique Records Only' Checkbox",
+                      "color": "#3b82f6"
+                    },
+                    {
+                      "label": "Formula-Based Criteria Evaluation",
+                      "color": "#8b5cf6"
+                    }
+                  ]
+                }
+              ],
+              "notes_content": "## 1. Regular Filter vs Advanced Filter\n- **Regular AutoFilter**: Manual dropdowns, filter by value, color, or icon. Limited to simple column-specific logic.\n- **Advanced Filter**: Reads an external **Criteria Range** on the sheet and writes filtered output in-place or copies clean rows to a dedicated destination table.\n\n## 2. Setting up Boolean Criteria Blocks\nSource Table Headers: `Region`, `Product`, `Sales`\n- **AND Logic (Criteria in Same Row)**:\n  | Region | Sales |\n  | :--- | :--- |\n  | East | >50000 |\n  *(Filters for records that are in the East AND have Sales > 50,000)*\n- **OR Logic (Criteria in Stacked Rows)**:\n  | Region | Product |\n  | :--- | :--- |\n  | East | |\n  | | Laptops |\n  *(Filters for records where Region is East OR Product is Laptops)*\n- **Extracting Unique Records**:\n  Check **\"Unique records only\"** to eliminate duplicate transaction rows on export.",
+              "key_takeaways": [
+                "Criteria placed on the same horizontal row represent logical AND conditions",
+                "Criteria placed on separate vertical rows represent logical OR conditions",
+                "Use 'Copy to another location' with 'Unique records only' to extract deduplicated dimensional tables"
+              ]
+            },
+            {
+              "id": "excel-e1-sec2",
+              "title": "Conditional Formatting Formulas: Highlighting nth Duplicates & Rule Priorities",
+              "speech_ssml": "<speak>Conditional formatting is not just about presets. <mark name=\"step2\"/> When you use custom formulas, you gain programmatic control over cell aesthetics. <break time=\"300ms\"/> To highlight duplicates repeating more than twice, we use a COUNTIF formula with an expanding range. And always remember to manage rule precedence in the Rule Manager.</speak>",
+              "whiteboard_commands": [
+                {
+                  "mark_anchor": "step2",
+                  "action": "draw_rect",
+                  "x": 60,
+                  "y": 50,
+                  "width": 420,
+                  "height": 70,
+                  "label": "Dynamic Formatting Formula: =COUNTIF($A$2:A2, A2) > 2",
+                  "color": "#f59e0b"
+                },
+                {
+                  "mark_anchor": "step2",
+                  "action": "draw_linked_nodes",
+                  "x": 70,
+                  "y": 150,
+                  "title": "Conditional Formatting Precedence Pipeline",
+                  "nodes": [
+                    {
+                      "val": "Rule 1: Top Priority (Stop if True)",
+                      "next": "Rule 2: Mid Priority"
+                    },
+                    {
+                      "val": "Rule 2: Mid Priority",
+                      "next": "Default Cell Style"
+                    }
+                  ],
+                  "color": "#10b981"
+                }
+              ],
+              "notes_content": "## 1. Writing Custom Boolean Rules\nRule formulas must evaluate to `TRUE` or `FALSE` relative to the top-left cell of the selection range.\n- **Highlight entire row based on cell value**:\n  Select `$A$2:$G$500`, enter formula: `=$D2 = \"Critical\"`\n  *(Dollar sign on column D freezes evaluation to column D while allowing row counter to float down)*.\n- **Highlighting 2nd or nth duplicate instance**:\n  `=COUNTIF($A$2:A2, A2) >= 2`\n  *(The expanding range `$A$2:A2` increments as it inspects each row, highlighting only duplicate appearances while leaving the 1st instance normal!)*.\n\n## 2. Rule Hierarchy & \"Stop If True\"\n- Excel processes formatting rules from top to bottom.\n- Enable **\"Stop If True\"** on high-priority rules (e.g., error alerts) to prevent subsequent cosmetic styles from overriding critical warnings.",
+              "key_takeaways": [
+                "Lock the column ($A2) when highlighting entire table rows based on a single trigger column",
+                "Use expanding ranges ($A$2:A2) in COUNTIF to identify nth repeating occurrences",
+                "Manage rule priority order and toggle 'Stop If True' to control style precedence"
+              ]
+            },
+            {
+              "id": "excel-e1-sec3",
+              "title": "INDIRECT, ADDRESS & Dynamic Dependent Cascading Drop-Downs",
+              "speech_ssml": "<speak>Now we enter the realm of dynamic meta-referencing. <mark name=\"step3\"/> The INDIRECT function converts a plain text string into a live cell reference! <break time=\"300ms\"/> When combined with Name Manager and Data Validation, you can create cascading drop-downs where selecting a Country in Dropdown 1 automatically populates its specific Cities in Dropdown 2. It is pure spreadsheet elegance.</speak>",
+              "whiteboard_commands": [
+                {
+                  "mark_anchor": "step3",
+                  "action": "draw_rect",
+                  "x": 50,
+                  "y": 40,
+                  "width": 440,
+                  "height": 75,
+                  "label": "=INDIRECT(text_string) & =ADDRESS(row, col)",
+                  "color": "#10b981"
+                },
+                {
+                  "mark_anchor": "step3",
+                  "action": "draw_hierarchy",
+                  "x": 70,
+                  "y": 150,
+                  "nodes": [
+                    {
+                      "label": "Dropdown 1 (Country): List of Countries",
+                      "color": "#3b82f6"
+                    },
+                    {
+                      "label": "Name Manager: Named Range for each Country",
+                      "color": "#8b5cf6"
+                    },
+                    {
+                      "label": "Dropdown 2 (City): =INDIRECT(A1)",
+                      "color": "#10b981"
+                    },
+                    {
+                      "label": "Dynamic Multi-Sheet Consolidation",
+                      "color": "#f59e0b"
+                    }
+                  ]
+                }
+              ],
+              "notes_content": "## 1. Function Mechanics\n- **`INDIRECT(ref_text, [a1])`**:\n  Converts text to an active cell pointer.\n  If cell A1 contains `\"Sheet2\"`:\n  `=INDIRECT(A1 & \"!B5\")` dynamically queries `Sheet2!B5`.\n- **`ADDRESS(row_num, column_num, [abs_num])`**:\n  Constructs a cell coordinate string from row and column integers:\n  `=ADDRESS(1, 1)` &rarr; `\"$A$1\"`.\n  Combining: `=INDIRECT(ADDRESS(3, 4))` returns the value in cell `D3`!\n\n## 2. Building Cascading (Dependent) Drop-Downs\n1. **Primary Drop-down (Cell A2)**: Data Validation &rarr; List &rarr; `USA, Canada, Germany`.\n2. **Name Manager Setup**:\n   - Highlight USA cities &rarr; Name range: `USA`.\n   - Highlight Germany cities &rarr; Name range: `Germany`.\n3. **Secondary Dependent Drop-down (Cell B2)**:\n   - Data Validation &rarr; List &rarr; Formula: `=INDIRECT(A2)`.\n   - When user selects `USA` in A2, the second drop-down automatically binds to the named range `USA`!",
+              "key_takeaways": [
+                "INDIRECT converts text strings into live formula cell references",
+                "Use =INDIRECT(Cell) in Data Validation lists to build multi-tier dependent dropdowns",
+                "Consolidate dozens of standardized monthly tabs using =INDIRECT(\"'\" & MonthName & \"'!B10\")"
+              ]
+            },
+            {
+              "id": "excel-e1-sec4",
+              "title": "Date/Time Serial Science, Dynamic OFFSET Arrays & Interactive Dashboards",
+              "speech_ssml": "<speak>Finally, let us unlock the science of Date, Time, and OFFSET. <mark name=\"step4\"/> In Excel, dates are stored as integer counts since January 1, 1900, while time is stored as a decimal fraction of a 24-hour day. <break time=\"300ms\"/> By pairing this understanding with the OFFSET function, we can create expanding dynamic chart ranges, Pivot Tables, and Slicers that update instantly as new monthly data is entered.</speak>",
+              "whiteboard_commands": [
+                {
+                  "mark_anchor": "step4",
+                  "action": "draw_rect",
+                  "x": 40,
+                  "y": 40,
+                  "width": 460,
+                  "height": 75,
+                  "label": "=OFFSET(reference, rows, cols, [height], [width])",
+                  "color": "#6366f1"
+                },
+                {
+                  "mark_anchor": "step4",
+                  "action": "draw_hierarchy",
+                  "x": 60,
+                  "y": 150,
+                  "nodes": [
+                    {
+                      "label": "Date Science: Integer Serial (Day 1 = Jan 1, 1900)",
+                      "color": "#3b82f6"
+                    },
+                    {
+                      "label": "Time Science: Decimal Fraction (0.5 = 12:00 PM)",
+                      "color": "#10b981"
+                    },
+                    {
+                      "label": "OFFSET Dynamic Chart Range with COUNTA",
+                      "color": "#f59e0b"
+                    },
+                    {
+                      "label": "Executive Dashboards: Pivots, Slicers & Form Controls",
+                      "color": "#8b5cf6"
+                    }
+                  ]
+                }
+              ],
+              "notes_content": "## 1. The Science of Date and Time in Excel\n- **Dates are Integers**: Day `1` = January 1, 1900. Today (e.g. Day `46,000+`) is simply the number of days elapsed.\n- **Times are Decimals**:\n  - `0.25` = 6:00 AM (1/4 of day).\n  - `0.50` = 12:00 PM Noon.\n  - `0.75` = 6:00 PM.\n- **Splitting Date and Time**:\n  If cell A1 contains `2026-09-20 14:30`:\n  - Extract Date: `=INT(A1)`\n  - Extract Time: `=MOD(A1, 1)`\n\n## 2. The OFFSET Function: Movements & Dynamic Arrays\n```excel\n=OFFSET(reference, rows, cols, [height], [width])\n```\n- **Dynamic Named Range for Auto-Expanding Charts**:\n  In Name Manager, define `ChartRevenue`:\n  `=OFFSET(Sheet1!$B$2, 0, 0, COUNTA(Sheet1!$B:$B) - 1, 1)`\n  Whenever new monthly sales numbers are typed at the bottom, the chart expands automatically without resizing!\n\n## 3. Executive Dashboard Synthesis\n- **Pivot Tables**: Group by dates (Years/Quarters/Months), calculated fields, and running totals.\n- **Slicers & Timeline Controls**: Connect multiple Pivot Tables to a single Slicer for smooth executive filtering.\n- **ActiveX & Form Controls**: Spin buttons and checkboxes to toggle scenario analysis models.",
+              "key_takeaways": [
+                "Use INT() to extract pure dates and MOD(n, 1) to isolate pure decimal times",
+                "Combine OFFSET with COUNTA in Name Manager to create charts that automatically expand when new data is entered",
+                "Connect unified Slicers across multiple Pivot Tables to build frictionless interactive executive dashboards"
+              ]
+            }
+          ],
+          "exam_questions": [
+            {
+              "id": 1,
+              "type": "mcq",
+              "question": "How does Excel internally represent dates and times, and how do you cleanly isolate the time portion from a timestamp cell containing 46000.75?",
+              "options": [
+                "Dates are stored as sequential integers (days since Jan 1, 1900) and times are stored as decimal fractions of a 24-hour day; isolate time using =MOD(A1, 1)",
+                "Dates are stored as strings; time is extracted using SUBSTRING(A1, 11, 8)",
+                "Dates are stored in milliseconds since 1970; time is extracted using =TIME(A1)",
+                "Dates and times cannot be separated without VBA macros"
+              ],
+              "correct_index": 0,
+              "marks": 1,
+              "explanation": "Excel represents whole days as integers and time as fractional decimals (0.75 = 18:00 or 6 PM). MOD(A1, 1) cleanly returns the fractional decimal representing the time."
+            },
+            {
+              "id": 2,
+              "type": "mcq",
+              "question": "How do you configure an Advanced Filter criteria range to filter records where Department is 'Finance' AND Sales > 50,000, OR Department is 'HR'?",
+              "options": [
+                "Row 1: Dept='Finance', Sales='>50000'; Row 2: Dept='HR', Sales=blank",
+                "Row 1: Dept='Finance', Sales='>50000', Dept='HR'",
+                "Row 1: Dept='Finance'; Row 2: Sales='>50000'; Row 3: Dept='HR'",
+                "Use the AND/OR dropdown inside the regular AutoFilter menu"
+              ],
+              "correct_index": 0,
+              "marks": 2,
+              "explanation": "Criteria in the same row execute an AND operation (Finance AND >50000). Criteria in separate rows execute an OR operation (OR HR with no sales constraint)."
+            },
+            {
+              "id": 3,
+              "type": "descriptive",
+              "question": "Describe step-by-step how to construct a two-tier dependent cascading drop-down list (e.g. Region in Dropdown 1, Country in Dropdown 2) using Data Validation, the Name Manager, and the INDIRECT function.",
+              "marks": 5,
+              "answer_key": "Step 1: Set up primary dropdown in cell A2 using Data Validation > List referencing the master region list (e.g., 'Americas', 'EMEA', 'APAC'). Step 2: In Name Manager, create named ranges matching each region name exactly (e.g. Name 'Americas' refers to list of American countries). Step 3: In cell B2 (dependent dropdown), select Data Validation > List and enter the formula: =INDIRECT(A2). When the user selects 'Americas' in A2, the INDIRECT function converts the text into the active named range reference, dynamically populating the second dropdown with only countries from that region.",
+              "essential_keywords": [
+                "Data Validation",
+                "Name Manager",
+                "INDIRECT",
+                "dependent dropdown",
+                "named range",
+                "cascading"
+              ]
+            },
+            {
+              "id": 4,
+              "type": "descriptive",
+              "question": "Formulate an OFFSET dynamic named range for a sales chart that automatically expands in height as new monthly transactions are logged into column B, and explain the role of COUNTA in preventing chart distortion.",
+              "marks": 10,
+              "answer_key": "Define the named range in Name Manager as: =OFFSET(Sheet1!$B$2, 0, 0, COUNTA(Sheet1!$B:$B) - 1, 1). The first argument $B$2 anchors the range to the first data cell. The row and column offsets are 0. The height parameter uses COUNTA(Sheet1!$B:$B) - 1, which dynamically counts all non-empty cells in column B minus 1 (to exclude the header row). The width parameter is 1. As new rows are appended to column B, COUNTA increments dynamically, causing the OFFSET height to expand without manual chart range adjustments.",
+              "essential_keywords": [
+                "OFFSET",
+                "COUNTA",
+                "dynamic named range",
+                "header minus 1",
+                "height parameter",
+                "auto-expanding"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
     "id": "course-lesson1-sunil-gavaskar",
     "title": "Lesson 1: My First Steps - Sunil Gavaskar",
     "domain_id": "domain-literature",

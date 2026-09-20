@@ -81,6 +81,31 @@ export function synthesizeCurriculumFromText(rawText, titleHint = 'Custom Ingest
     }
   }
 
+  // Check if document or query is about Microsoft Excel & Data Analytics
+  if (
+    lowerHint.includes('excel') ||
+    lowerHint.includes('vlookup') ||
+    lowerHint.includes('index match') ||
+    lowerHint.includes('xlookup') ||
+    lowerHint.includes('spreadsheet') ||
+    lowerHint.includes('indirect') ||
+    lowerHint.includes('advance filter') ||
+    lowerText.includes('vlookup') ||
+    lowerText.includes('index match') ||
+    lowerText.includes('name box') ||
+    lowerText.includes('cell locking')
+  ) {
+    const excelPath = path.resolve(process.cwd(), 'server/data/excelMasterCourse.json');
+    if (fs.existsSync(excelPath)) {
+      try {
+        console.log('[Server Parser] Matched authentic Advanced Microsoft Excel Masterclass curriculum!');
+        return JSON.parse(fs.readFileSync(excelPath, 'utf-8'));
+      } catch (err) {
+        console.warn('Error reading excelMasterCourse.json:', err);
+      }
+    }
+  }
+
   // Clean and summarize text paragraphs
   const cleanLines = rawText
     .split(/\r?\n/)

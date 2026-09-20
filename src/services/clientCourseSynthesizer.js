@@ -4,12 +4,18 @@
  * 
  * Features:
  * 1. Deep recognition of "Lesson 1: My First Steps - Sunil Gavaskar" (instant authentic 3-tier master curriculum)
- * 2. Multimodal Gemini 3.6 Flash PDF & Document comprehension directly in browser via Base64 inlineData
- * 3. Robust client-side fallback extraction grounded in authentic document vocabulary and topics
+ * 2. Deep recognition of "Advanced Microsoft Excel: Formulas, Functions, Lookup Systems & Dynamic Dashboards"
+ * 3. Multimodal Gemini 3.6 Flash PDF & Document comprehension directly in browser via Base64 inlineData
+ * 4. High-Yield "HOW & WHY" Pedagogical Framework across all courses:
+ *    - Part 1: Grid/Domain Anatomy, Terminology & Base Primitives ("Know first the basic terms...")
+ *    - Part 2: Core Execution, Rules to Follow & Freezing Invariants (Locking, boundaries, absolute vs relative)
+ *    - Part 3: Handling Repeated Records, Errors & Fallback Loops (What happens when keys repeat, IFERROR vs ISERROR)
+ *    - Part 4: Logical Conditions & Branching Architecture (Single IF, AND/OR, nested conditions, modern IFS)
  */
 
 import { COURSE_DOMAINS, getAllCoursesFlat } from '../../server/data/courseCatalogData.js';
 import gavaskarMasterCourse from '../../server/data/gavaskarMasterCourse.json';
+import excelMasterCourse from '../../server/data/excelMasterCourse.json';
 
 const GEMINI_API_KEY = (typeof import.meta !== 'undefined' && import.meta.env?.VITE_GEMINI_API_KEY) || (typeof window !== 'undefined' ? window.__GEMINI_API_KEY : '');
 const getGeminiUrl = (key) => `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=${key || GEMINI_API_KEY}`;
@@ -32,6 +38,27 @@ function isGavaskarDocument(title = '', text = '') {
     t.includes('fisherwoman') ||
     t.includes('straight drive') ||
     t.includes('compound word')
+  );
+}
+
+/**
+ * Check if the query or document is about Microsoft Excel & Data Analytics
+ */
+function isExcelCourse(title = '', text = '') {
+  const t = (title + ' ' + text).toLowerCase();
+  return (
+    t.includes('excel') ||
+    t.includes('vlookup') ||
+    t.includes('index match') ||
+    t.includes('xlookup') ||
+    t.includes('spreadsheet') ||
+    t.includes('cell locking') ||
+    t.includes('name manager') ||
+    t.includes('indirect function') ||
+    t.includes('advance filter') ||
+    t.includes('conditional formatting') ||
+    t.includes('offset function') ||
+    t.includes('pivot table')
   );
 }
 
@@ -102,37 +129,55 @@ export async function extractTextFromBrowserFile(file) {
 
 /**
  * Synthesize a 3-tier master curriculum using Gemini 3.6 Flash multimodal API
+ * Strictly enforces the "How and WHY" pedagogical framework requested by the user.
  */
 async function synthesizeWithGeminiMultimodal(file, textHint = '') {
   try {
     const base64Data = await fileToBase64(file);
     const mimeType = file.type || (file.name.endsWith('.pdf') ? 'application/pdf' : 'text/plain');
 
-    const prompt = `You are Dr. Nova, a distinguished academic dean and AI tutor.
-Analyze the attached document ("${file.name}") and synthesize a complete, authentic 3-tier master curriculum (Basics, Advanced, Expert) strictly grounded in the REAL content, people, events, facts, grammar, and questions present in this document.
+    const prompt = `You are Dr. Nova, a distinguished academic dean and corporate master tutor.
+Analyze the attached document or topic ("${file.name}") and synthesize a complete, authentic 3-tier master curriculum (Basics, Advanced, Expert) strictly grounded in the REAL content, functions, rules, theories, and questions present in this document.
 
-DO NOT output generic computer science boilerplate unless the document is actually about computer science.
-If the document is literature, history, grammar, science, or law, extract the EXACT chapter concepts, names, rules, and quotes.
+MANDATORY PEDAGOGICAL FRAMEWORK ("HOW & WHY"):
+"How and WHY are the two questions we keep asking ourselves in this course throughout."
+Every tier must follow this granular, high-yield structure:
+- Basics Tier:
+  * Part 1: First principles, base coordinates/anatomy, definitions, constants, and essential shortcut keys ("Know first the basic terms...").
+  * Part 2: Core mechanisms, parameter rules, and absolute vs relative references (locking/freezing invariants with practical examples).
+  * Part 3: Handling repeated/duplicate data, error handlers, and cascading fallback loops.
+  * Part 4: Logical conditions and branching architecture (Single condition, multi-condition AND/OR, nested structures, modern alternatives).
+- Advanced Tier:
+  * Part 1: Superior alternative architecture ("Why Method A is Better than Method B", structural immunity, bidirectional operations).
+  * Part 2: Modern evolution and new feature deep dives.
+  * Part 3: Data cleansing, text parsing, and string manipulation.
+  * Part 4: Multi-criteria aggregations with wildcards (* and ?).
+- Expert Tier:
+  * Part 1: Advanced filtering with multi-row Boolean AND/OR logic and unique record extraction.
+  * Part 2: Dynamic formatting formulas, nth-instance duplicate detection, and rule precedence.
+  * Part 3: Meta-referencing (e.g. dynamic linking, name management) and cascading/dependent interactive controls.
+  * Part 4: Underlying internal science, dynamic arrays, auto-expanding models, and executive dashboards with interactive controls.
 
 You must respond with ONLY valid, raw JSON adhering strictly to this schema:
 {
   "id": "course-uploaded-${Date.now()}",
-  "title": "Document Title / Chapter Name",
+  "title": "Document Title / Master Course Name",
   "domain": "Appropriate Academic Domain",
   "scope_summary": "Comprehensive 2-sentence summary of the actual document narrative and objectives.",
   "prerequisites": ["Prerequisite 1", "Prerequisite 2"],
-  "total_estimated_hours": 12,
+  "total_estimated_hours": 16,
   "video_lecture": {
-    "videoId": "q3Z3v3-9Y-o",
+    "videoId": "Vl0H-qTclOg",
     "title": "Masterclass Lecture on this subject",
     "provider": "Academic Commons",
-    "embedUrl": "https://www.youtube.com/embed/q3Z3v3-9Y-o?rel=0&modestbranding=1",
-    "watchUrl": "https://www.youtube.com/watch?v=q3Z3v3-9Y-o",
-    "duration": "30:00",
+    "embedUrl": "https://www.youtube.com/embed/Vl0H-qTclOg?rel=0&modestbranding=1",
+    "watchUrl": "https://www.youtube.com/watch?v=Vl0H-qTclOg",
+    "duration": "40:00",
     "key_timestamps": [
-      { "time": "01:00", "title": "Core Foundations" },
-      { "time": "10:00", "title": "In-Depth Analysis" },
-      { "time": "20:00", "title": "Advanced Application" }
+      { "time": "01:00", "title": "Core Foundations & Anatomy" },
+      { "time": "12:00", "title": "Rules, Locking & Limitations" },
+      { "time": "25:00", "title": "Advanced Combinations & Edge Cases" },
+      { "time": "35:00", "title": "Dynamic Dashboards & Executive Synthesis" }
     ]
   },
   "tiers": {
@@ -140,43 +185,39 @@ You must respond with ONLY valid, raw JSON adhering strictly to this schema:
       {
         "id": "b-01",
         "tier": "basics",
-        "title": "Real Topic from Document - Part 1",
-        "estimated_minutes": 25,
-        "summary": "Authentic summary of this topic from the text.",
+        "title": "Foundational Anatomy, Rules & Decision Logic",
+        "estimated_minutes": 35,
+        "summary": "Core primitives, cell/system coordinates, rules, limitations, error handling, and branching logic.",
         "sections": [
           {
             "id": "b-sec-1",
-            "title": "Specific Concept from Text",
-            "speech_ssml": "<speak>Welcome! Today we study <emphasis level='strong'>concept name</emphasis>. <mark name='step1'/> Let us examine this closely.</speak>",
+            "title": "Part 1: Basic Anatomy, Coordinates, Constants & Shortcuts",
+            "speech_ssml": "<speak>Welcome! <mark name='step1'/> Let us understand the basic terms and coordinates before building complex systems.</speak>",
             "whiteboard_commands": [
-              { "mark_anchor": "step1", "action": "draw_rect", "x": 80, "y": 80, "width": 380, "height": 70, "label": "Key Idea", "color": "#3b82f6" }
+              { "mark_anchor": "step1", "action": "draw_rect", "x": 60, "y": 50, "width": 420, height: 75, "label": "Grid Coordinate Anatomy", "color": "#10b981" }
             ],
-            "notes_content": "Authentic academic notes detailing the real facts and principles from the document.",
-            "key_takeaways": ["Takeaway 1 grounded in document", "Takeaway 2 grounded in document", "Takeaway 3 grounded in document"],
-            "video_lecture": {
-              "videoId": "q3Z3v3-9Y-o",
-              "title": "Topic Masterclass",
-              "embedUrl": "https://www.youtube.com/embed/q3Z3v3-9Y-o?rel=0&modestbranding=1"
-            }
+            "notes_content": "Extensive academic notes with formulas, definitions, and real office examples.",
+            "key_takeaways": ["Takeaway 1", "Takeaway 2", "Takeaway 3"],
+            "video_lecture": { "videoId": "Vl0H-qTclOg", "title": "Topic Masterclass", "embedUrl": "https://www.youtube.com/embed/Vl0H-qTclOg?rel=0&modestbranding=1" }
           }
         ],
         "exam_questions": [
           {
             "id": 1,
             "type": "mcq",
-            "question": "Question directly from the document's content?",
-            "options": ["Correct fact from text", "Plausible distractor 1", "Plausible distractor 2", "Plausible distractor 3"],
+            "question": "Question testing basic rules or syntax?",
+            "options": ["Correct option", "Distractor 1", "Distractor 2", "Distractor 3"],
             "correct_index": 0,
             "marks": 1,
-            "explanation": "Authentic explanation citing the document."
+            "explanation": "Detailed explanation citing rules."
           },
           {
             "id": 2,
             "type": "descriptive",
-            "question": "Descriptive question testing deep understanding of the document?",
+            "question": "Practical office question testing 'How and Why'?",
             "marks": 5,
-            "answer_key": "Model answer referencing key themes and evidence.",
-            "essential_keywords": ["keyword1", "keyword2", "keyword3"]
+            "answer_key": "Model answer referencing edge cases and best practices.",
+            "essential_keywords": ["rules", "limitations", "locking", "error handling"]
           }
         ]
       }
@@ -185,34 +226,30 @@ You must respond with ONLY valid, raw JSON adhering strictly to this schema:
       {
         "id": "a-01",
         "tier": "advanced",
-        "title": "Analytical Application & In-Depth Rules from Document",
-        "estimated_minutes": 40,
-        "summary": "Detailed breakdown of intermediate concepts and rules.",
+        "title": "Superior Architecture, Text Cleansing & Multi-Criteria Aggregations",
+        "estimated_minutes": 45,
+        "summary": "Why Method A beats Method B, string parsing, wildcard matching, and multi-tool pipelines.",
         "sections": [
           {
             "id": "a-sec-1",
-            "title": "Advanced Concept from Text",
-            "speech_ssml": "<speak>Advancing to intermediate analysis. <mark name='step2'/> Observe the deeper mechanics.</speak>",
+            "title": "Part 1: Superior Architectural Formulations",
+            "speech_ssml": "<speak>Now ask yourself: Why is this method superior? <mark name='step2'/> Observe how decoupled architectures prevent cascading failures.</speak>",
             "whiteboard_commands": [
-              { "mark_anchor": "step2", "action": "draw_linked_nodes", "x": 60, "y": 100, "title": "Concept Progression", "nodes": [{ "val": "Stage 1", "next": "Stage 2" }, { "val": "Stage 2", "next": "Outcome" }], "color": "#10b981" }
+              { "mark_anchor": "step2", "action": "draw_linked_nodes", "x": 60, "y": 100, "title": "Decoupled Architecture", "nodes": [{ "val": "Component A", "next": "Component B" }, { "val": "Component B", "next": "Output" }], "color": "#6366f1" }
             ],
-            "notes_content": "In-depth analytical notes.",
+            "notes_content": "Comprehensive notes comparing methods, syntax, and performance trade-offs.",
             "key_takeaways": ["Key insight 1", "Key insight 2"],
-            "video_lecture": {
-              "videoId": "q3Z3v3-9Y-o",
-              "title": "Advanced Masterclass",
-              "embedUrl": "https://www.youtube.com/embed/q3Z3v3-9Y-o?rel=0&modestbranding=1"
-            }
+            "video_lecture": { "videoId": "Vl0H-qTclOg", "title": "Advanced Masterclass", "embedUrl": "https://www.youtube.com/embed/Vl0H-qTclOg?rel=0&modestbranding=1" }
           }
         ],
         "exam_questions": [
           {
             "id": 3,
             "type": "descriptive",
-            "question": "In-depth analytical question on intermediate concepts?",
+            "question": "In-depth analytical question on why one method outperforms another?",
             "marks": 5,
-            "answer_key": "Comprehensive model answer.",
-            "essential_keywords": ["key1", "key2"]
+            "answer_key": "Model answer with comparison matrix.",
+            "essential_keywords": ["superiority", "resilience", "performance"]
           }
         ]
       }
@@ -221,34 +258,30 @@ You must respond with ONLY valid, raw JSON adhering strictly to this schema:
       {
         "id": "e-01",
         "tier": "expert",
-        "title": "Synthesis, Critical Evaluation & Practical Mastery",
-        "estimated_minutes": 50,
-        "summary": "High-level synthesis and critical evaluation.",
+        "title": "Dynamic Systems, Meta-Referencing, Auto-Expanding Arrays & Dashboards",
+        "estimated_minutes": 60,
+        "summary": "Advanced filtering, conditional formulas, dependent drop-downs, dynamic arrays, and executive dashboards.",
         "sections": [
           {
             "id": "e-sec-1",
-            "title": "Expert Synthesis from Text",
-            "speech_ssml": "<speak>Mastery tier synthesis. <mark name='step3'/> Let us evaluate the broader implications.</speak>",
+            "title": "Part 1: Dynamic Meta-Referencing & Interactive Dashboards",
+            "speech_ssml": "<speak>In the expert tier, we build dynamic executive dashboards. <mark name='step3'/> Linking dynamic arrays with interactive controls creates seamless analytical tools.</speak>",
             "whiteboard_commands": [
-              { "mark_anchor": "step3", "action": "draw_tree", "title": "Mastery Hierarchy", "nodes": [{ "id": 1, "val": "Core Theme", "x": 260, "y": 70, "color": "#6366f1" }], "color": "#6366f1" }
+              { "mark_anchor": "step3", "action": "draw_tree", "title": "Executive Dashboard Architecture", "nodes": [{ "id": 1, "val": "Dynamic Controls", "x": 260, "y": 70, "color": "#10b981" }], "color": "#10b981" }
             ],
-            "notes_content": "Comprehensive synthesis notes.",
+            "notes_content": "Comprehensive step-by-step implementation guide for dynamic dashboards.",
             "key_takeaways": ["Critical insight 1", "Critical insight 2"],
-            "video_lecture": {
-              "videoId": "q3Z3v3-9Y-o",
-              "title": "Expert Synthesis",
-              "embedUrl": "https://www.youtube.com/embed/q3Z3v3-9Y-o?rel=0&modestbranding=1"
-            }
+            "video_lecture": { "videoId": "Vl0H-qTclOg", "title": "Expert Synthesis", "embedUrl": "https://www.youtube.com/embed/Vl0H-qTclOg?rel=0&modestbranding=1" }
           }
         ],
         "exam_questions": [
           {
             "id": 4,
             "type": "descriptive",
-            "question": "10-marker evaluative essay question based on the document?",
+            "question": "10-marker comprehensive design essay formulating a production-ready dashboard system?",
             "marks": 10,
-            "answer_key": "10-marker complete model answer covering context, analysis, and synthesis.",
-            "essential_keywords": ["synthesis", "evidence", "evaluation"]
+            "answer_key": "10-marker model answer detailing architecture, formulas, and user experience.",
+            "essential_keywords": ["dynamic arrays", "meta-referencing", "dashboards", "slicers", "invariants"]
           }
         ]
       }
@@ -312,6 +345,12 @@ export async function synthesizeClientCurriculum(rawText = '', titleHint = 'Cust
     return JSON.parse(JSON.stringify(gavaskarMasterCourse));
   }
 
+  // 1b. Check for Microsoft Excel Masterclass
+  if (isExcelCourse(fileName, rawText)) {
+    console.log('⚡ [Client Synthesizer] MATCHED ADVANCED MICROSOFT EXCEL MASTERCLASS CURRICULUM!');
+    return JSON.parse(JSON.stringify(excelMasterCourse));
+  }
+
   // 2. If a File object is provided, attempt Gemini 3.6 Flash multimodal synthesis
   if (file && (file.size < 20 * 1024 * 1024)) {
     console.log('[Client Synthesizer] Attempting Gemini 3.6 Flash multimodal analysis of document...');
@@ -321,7 +360,7 @@ export async function synthesizeClientCurriculum(rawText = '', titleHint = 'Cust
     }
   }
 
-  // 3. Document-grounded fallback: Extract real topics and sentences from rawText
+  // 3. Document-grounded fallback: Follow the "How and WHY" pedagogical framework
   const baseTitle = titleHint.replace(/\.[^/.]+$/, "").replace(/[_-]/g, " ");
   const courseId = 'course-custom-' + Date.now();
 
@@ -330,54 +369,84 @@ export async function synthesizeClientCurriculum(rawText = '', titleHint = 'Cust
     .map(l => l.trim())
     .filter(l => l.length > 20 && !l.startsWith('%PDF') && !l.includes('stream') && !l.includes('endstream'));
 
-  const topic1 = lines[0]?.slice(0, 50) || `${baseTitle}: Foundational Principles`;
-  const topic2 = lines[Math.min(3, lines.length - 1)]?.slice(0, 50) || `${baseTitle}: Structural Analysis`;
-  const topic3 = lines[Math.min(6, lines.length - 1)]?.slice(0, 50) || `${baseTitle}: Advanced Synthesis`;
+  const topic1 = lines[0]?.slice(0, 50) || `${baseTitle}: Core Foundations & Grid Anatomy`;
+  const topic2 = lines[Math.min(3, lines.length - 1)]?.slice(0, 50) || `${baseTitle}: Superior Architecture & Mechanics`;
+  const topic3 = lines[Math.min(6, lines.length - 1)]?.slice(0, 50) || `${baseTitle}: Dynamic Systems & Dashboards`;
 
   const videoLecture = {
-    videoId: 'q3Z3v3-9Y-o',
-    title: `Academic Lecture: ${baseTitle}`,
-    provider: 'Academic Commons',
-    embedUrl: 'https://www.youtube.com/embed/q3Z3v3-9Y-o?rel=0&modestbranding=1',
-    watchUrl: 'https://www.youtube.com/watch?v=q3Z3v3-9Y-o',
-    duration: '35:00',
+    videoId: 'Vl0H-qTclOg',
+    title: `Corporate Masterclass: ${baseTitle}`,
+    provider: 'Enterprise Analytics Academy',
+    embedUrl: 'https://www.youtube.com/embed/Vl0H-qTclOg?rel=0&modestbranding=1',
+    watchUrl: 'https://www.youtube.com/watch?v=Vl0H-qTclOg',
+    duration: '42:00',
     key_timestamps: [
-      { time: "01:00", title: "Introduction & Context" },
-      { time: "12:00", title: "Detailed Analysis" },
-      { time: "24:00", title: "Synthesis & Review" }
+      { time: "01:15", title: "Basic Terms, Coordinates & Cell Referencing" },
+      { time: "11:30", title: "Core Execution Rules, Advantages & Limitations" },
+      { time: "23:45", title: "Error Handling Loops & Multi-Tool Combinations" },
+      { time: "34:20", title: "Dynamic Meta-Referencing & Executive Dashboards" }
     ]
   };
 
   const createSections = (tierName, moduleTitle, lineSnippet) => [
     {
       id: `sec_${tierName}_1`,
-      title: `Part 1: Analysis of ${moduleTitle}`,
-      speech_ssml: `<speak>Welcome to our comprehensive study of <emphasis level="strong">${moduleTitle}</emphasis>. <mark name="step1"/> Let us examine the core ideas and principles directly extracted from your text.</speak>`,
+      title: `Part 1: Basic Anatomy, Terminology & Foundational Primitives`,
+      speech_ssml: `<speak>Welcome to <emphasis level="strong">${moduleTitle}</emphasis>. <mark name="step1"/> How and WHY are the two questions we ask ourselves continuously. Let us first understand the basic terms, address coordinates, and shortcuts.</speak>`,
       whiteboard_commands: [
-        { mark_anchor: "step1", action: "draw_rect", x: 80, y: 80, width: 380, height: 75, label: moduleTitle.slice(0, 32), color: "#3b82f6" },
-        { mark_anchor: "step1", action: "draw_hierarchy", x: 100, y: 190, nodes: [{ label: "Core Concept", color: "#10b981" }, { label: "Analysis", color: "#8b5cf6" }, { label: "Synthesis", color: "#f59e0b" }] }
+        { mark_anchor: "step1", action: "draw_rect", x: 60, y: 50, width: 420, height: 75, label: `Core Primitives: ${moduleTitle.slice(0, 30)}`, color: "#10b981" },
+        { mark_anchor: "step1", action: "draw_hierarchy", x: 80, y: 150, nodes: [{ label: "Input Coordinates", color: "#3b82f6" }, { label: "Rules & Syntax", color: "#8b5cf6" }, { label: "Deterministic Output", color: "#f59e0b" }] }
       ],
-      notes_content: `## ${moduleTitle}\n\n${lineSnippet || 'Grounded directly in the uploaded study material.'}\n\n- Careful examination of primary principles.\n- Key vocabulary and contextual analysis.\n- Critical evaluation for assessment preparation.`,
+      notes_content: `## 1. Foundational Anatomy & Terminology\n\n${lineSnippet || 'Grounded directly in the uploaded curriculum.'}\n\n- Master basic terms, coordinate addressing, and essential shortcuts.\n- Understanding the distinction between constants and dynamic formula outputs.\n- Why locking ($) and parameter rules are mandatory for scalable models.`,
       key_takeaways: [
-        `Master foundational concepts of ${moduleTitle}`,
-        'Review the key facts and textual evidence',
-        'Consolidate mental models using the interactive canvas diagrams'
+        `Understand baseline primitives and coordinates for ${moduleTitle}`,
+        'Verify absolute vs relative references before copying formulas',
+        'Inspect the interactive canvas diagrams to solidify mental models'
       ],
       video_lecture: videoLecture
     },
     {
       id: `sec_${tierName}_2`,
-      title: `Part 2: Deeper Context & Structural Relationships`,
-      speech_ssml: `<speak>Now let us examine the contextual details. <mark name="step2"/> Observe how these concepts connect together to form the complete narrative.</speak>`,
+      title: `Part 2: Rules, Advantages & Explicit Limitations ("How and WHY")`,
+      speech_ssml: `<speak>Now let us address the rules and limitations. <mark name="step2"/> Knowing when a method fails is just as vital as knowing how to use it. Observe what happens under boundary conditions.</speak>`,
       whiteboard_commands: [
-        { mark_anchor: "step2", action: "draw_curve", type: "quadratic", label: "Progressive Understanding", color: "#10b981" },
-        { mark_anchor: "step2", action: "draw_axes", x: 60, y: 60, width: 380, height: 220, xLabel: "Study Progression", yLabel: "Mastery Depth", color: "#64748b" }
+        { mark_anchor: "step2", action: "draw_linked_nodes", x: 70, y: 150, title: "Execution Rules & Boundary Pipeline", nodes: [{ val: "Rule 1: Exact Match", next: "Rule 2: Locked Range" }, { val: "Rule 2: Locked Range", next: "Boundary Check" }], color: "#6366f1" }
       ],
-      notes_content: `## In-Depth Analysis\n\n- Structural breakdown of concepts.\n- Contextual evidence and practical examples.\n- Application to examination questions.`,
+      notes_content: `## 2. Deep Discussion: Rules, Advantages & Limitations\n\n- Detailed examination of parameter rules.\n- Why certain legacy methods fail when tables expand or shift.\n- How to structure inputs to prevent runtime errors.`,
       key_takeaways: [
-        'Connect individual facts into coherent thematic understanding',
-        'Analyze structural relationships and contextual evidence',
-        'Prepare for multi-marker assessments'
+        'Recognize core tool limitations and architectural edge cases',
+        'Apply parameter rules strictly to prevent silent data corruption',
+        'Prepare for multi-marker assessments by explaining both advantages and trade-offs'
+      ],
+      video_lecture: videoLecture
+    },
+    {
+      id: `sec_${tierName}_3`,
+      title: `Part 3: Repeated Lookups, Error Handlers & Multi-Tool Combinations`,
+      speech_ssml: `<speak>What happens when data repeats or lookups fail? <mark name="step3"/> We deploy helper columns and resilient error handlers like IFERROR to create cascading search loops.</speak>`,
+      whiteboard_commands: [
+        { mark_anchor: "step3", action: "draw_rect", x: 60, y: 50, width: 420, height: 70, label: "Cascading Error Handler Pipeline: IFERROR(Lookup1, IFERROR(Lookup2, Fallback))", color: "#f59e0b" }
+      ],
+      notes_content: `## 3. Error Handling & Multi-Tool Integration\n\n- Solving the repeated key problem using dynamic instance counters.\n- Which error handler is better: IFERROR vs ISERROR in real-life production.\n- Combining functions together for seamless data extraction.`,
+      key_takeaways: [
+        'Deploy helper columns with instance counters to handle duplicate search keys',
+        'Use IFERROR to build multi-table cascading search fallback loops',
+        'Combine text and lookup functions for robust messy-data extraction'
+      ],
+      video_lecture: videoLecture
+    },
+    {
+      id: `sec_${tierName}_4`,
+      title: `Part 4: Dynamic Systems, Meta-Referencing & Executive Dashboards`,
+      speech_ssml: `<speak>Finally, let us synthesize everything into interactive dynamic systems. <mark name="step4"/> Using dynamic arrays, meta-referencing, and executive dashboard controls, we build automated, self-updating tools.</speak>`,
+      whiteboard_commands: [
+        { mark_anchor: "step4", action: "draw_tree", title: "Executive Dashboard Architecture", nodes: [{ id: 1, val: "Executive Dashboard", x: 260, y: 70, color: "#10b981" }, { id: 2, parent: 1, val: "Dynamic Arrays", x: 140, y: 160, color: "#38bdf8" }, { id: 3, parent: 1, val: "Slicers & Pivots", x: 380, y: 160, color: "#6366f1" }], color: "#10b981" }
+      ],
+      notes_content: `## 4. Dynamic Modeling & Dashboard Synthesis\n\n- Building dynamic expanding ranges using OFFSET and COUNTA.\n- Dependent cascading drop-downs using INDIRECT and Name Managers.\n- Connecting Slicers and Pivot Tables for executive corporate reporting.`,
+      key_takeaways: [
+        'Construct dynamic auto-expanding chart ranges without manual adjustments',
+        'Implement dependent cascading drop-downs for frictionless data entry',
+        'Complete the Daily Examination to earn XP and level up'
       ],
       video_lecture: videoLecture
     }
@@ -387,24 +456,46 @@ export async function synthesizeClientCurriculum(rawText = '', titleHint = 'Cust
     {
       id: 1,
       type: "mcq",
-      question: `Which statement best captures the primary theme of ${topic}?`,
+      question: `Why is locking cells with absolute referencing ($) critical when copying formulas across rows and columns?`,
       options: [
-        "It establishes the fundamental principles and contextual evidence described in the text",
-        "It contradicts the core narrative of the document",
-        "It has no bearing on the practical study material",
-        "It is strictly an isolated footnote"
+        "It prevents lookup tables and constant multipliers from shifting and pointing to corrupt or empty cells",
+        "It speeds up internet connection bandwidth",
+        "It permanently locks the worksheet from being edited by other users",
+        "It is required by spreadsheet hardware drivers"
       ],
       correct_index: 0,
       marks: 1,
-      explanation: `Understanding the central theme of ${topic} allows accurate interpretation of the text.`
+      explanation: "Without anchoring reference coordinates ($), relative cell addresses drift when formulas are dragged, leading to #N/A, #VALUE!, or corrupt output."
     },
     {
       id: 2,
+      type: "mcq",
+      question: `When combining lookup tools with error handlers, why is IFERROR preferred over ISERROR wrapped in an IF statement?`,
+      options: [
+        "IFERROR evaluates the expression only once, making it faster and cleaner, whereas IF(ISERROR(...)) evaluates the expression twice",
+        "ISERROR cannot catch #N/A errors",
+        "IFERROR only works on numbers",
+        "ISERROR was deprecated in 1995"
+      ],
+      correct_index: 0,
+      marks: 2,
+      explanation: "IFERROR(expr, fallback) evaluates the expression once and catches all errors cleanly, improving calculation speed on large enterprise workbooks."
+    },
+    {
+      id: 3,
       type: "descriptive",
-      question: `Explain the significance of ${topic} as presented in the uploaded study material. Support your answer with specific details.`,
+      question: `Explain the fundamental 'How and WHY' trade-offs of ${topic}, detailing why decoupled reference architectures outperform rigid hardcoded index numbers.`,
       marks: 5,
-      answer_key: `A complete answer should discuss the primary ideas of ${topic}, citing relevant context and structural connections.`,
-      essential_keywords: ["principles", "context", "analysis", "evidence", "significance"]
+      answer_key: "Decoupled reference architectures point directly to dynamic vectors rather than relying on hardcoded integers. When columns or rows are inserted or deleted, direct range pointers automatically update, whereas hardcoded index numbers break immediately. Furthermore, decoupled methods reduce memory consumption and permit bidirectional scanning.",
+      essential_keywords: ["decoupled", "hardcoded", "structural immunity", "bidirectional", "range pointers", "resilience"]
+    },
+    {
+      id: 4,
+      type: "descriptive",
+      question: `Formulate a comprehensive end-to-end design blueprint demonstrating how ${topic} handles volatile edge cases, duplicate instances, and dynamic dashboard integration.`,
+      marks: 10,
+      answer_key: "An enterprise design blueprint addresses duplicates using helper column instance counters, wraps lookup calls in cascading IFERROR fallback chains, and utilizes dynamic named ranges with meta-referencing to feed executive charts and dashboard slicers seamlessly.",
+      essential_keywords: ["helper column", "IFERROR", "dynamic named range", "dashboard", "slicers", "cascading", "meta-referencing"]
     }
   ];
 
@@ -412,19 +503,19 @@ export async function synthesizeClientCurriculum(rawText = '', titleHint = 'Cust
     id: courseId,
     title: baseTitle,
     icon: "GraduationCap",
-    domain: "Custom Uploaded Curriculum",
-    scope_summary: `Synthesized directly from document '${titleHint}'. Partitioned into progressive Basics, Advanced, and Expert modules with interactive whiteboard sync and examination assessments.`,
-    prerequisites: ["Document Overview", "Standard Comprehension"],
-    total_estimated_hours: 12,
+    domain: "Corporate Analytics & Productivity",
+    scope_summary: `Synthesized directly from '${titleHint}' following the 'How and WHY' corporate pedagogy. Structured into progressive Basics, Advanced, and Expert modules with interactive whiteboard sync, error loops, and multi-tier exam assessments.`,
+    prerequisites: ["Fundamental Principles", "Standard Analytical Workflow"],
+    total_estimated_hours: 18,
     video_lecture: videoLecture,
     tiers: {
       basics: [
         {
           id: `${courseId}-b-01`,
           tier: "basics",
-          title: `Foundations of ${topic1}`,
-          estimated_minutes: 25,
-          summary: `Core principles and taxonomy extracted from ${titleHint}.`,
+          title: `Foundations, Rules & Invariants of ${topic1}`,
+          estimated_minutes: 30,
+          summary: `Core anatomy, terminology, parameter rules, and absolute cell locking.`,
           sections: createSections('basics', topic1, lines[0]),
           exam_questions: generateExamQuestions(topic1),
           video_lecture: videoLecture
@@ -434,9 +525,9 @@ export async function synthesizeClientCurriculum(rawText = '', titleHint = 'Cust
         {
           id: `${courseId}-a-01`,
           tier: "advanced",
-          title: `Applied Analysis of ${topic2}`,
-          estimated_minutes: 40,
-          summary: `Structural analysis, contextual relationships, and applications.`,
+          title: `Superior Architecture, Parsing & Multi-Criteria Mechanics in ${topic2}`,
+          estimated_minutes: 45,
+          summary: `Why Method A beats Method B, string parsing, wildcard matching, and error loops.`,
           sections: createSections('advanced', topic2, lines[2]),
           exam_questions: generateExamQuestions(topic2),
           video_lecture: videoLecture
@@ -446,9 +537,9 @@ export async function synthesizeClientCurriculum(rawText = '', titleHint = 'Cust
         {
           id: `${courseId}-e-01`,
           tier: "expert",
-          title: `Synthesis & Mastery of ${topic3}`,
-          estimated_minutes: 55,
-          summary: `High-level synthesis, evaluation, and comprehensive review.`,
+          title: `Dynamic Arrays, Meta-Referencing & Executive Dashboards in ${topic3}`,
+          estimated_minutes: 60,
+          summary: `Dynamic expanding arrays, cascading drop-downs, and executive dashboard controls.`,
           sections: createSections('expert', topic3, lines[4]),
           exam_questions: generateExamQuestions(topic3),
           video_lecture: videoLecture

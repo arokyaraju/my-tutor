@@ -63,6 +63,11 @@ export const COURSE_DOMAINS = [
         id: "cs-graphics-vfx-game",
         title: "Computer Graphics, Visual Effects & Game Development",
         focus: "Rendering pipelines, rasterization vs ray-tracing, shader math (GLSL), physics engines, and GPU compute."
+      },
+      {
+        id: "course-advanced-excel-mastery",
+        title: "Advanced Microsoft Excel: Formulas, Functions, Lookup Systems & Dynamic Dashboards",
+        focus: "How and WHY in Excel: Cell locking ($), VLOOKUP rules & limitations, INDEX MATCH vs VLOOKUP, XLOOKUP, nested IF/IFS, text parsing, COUNTIFS/SUMIFS with wildcards, Advanced Filter, Conditional Formatting formulas, INDIRECT, dependent drop-downs, Date/Time serial science, dynamic OFFSET charts, Pivots, and Slicers."
       }
     ]
   },
