@@ -1,0 +1,164 @@
+[
+  {
+    "id": "log-1789885131234-ziyc",
+    "timestamp": "2026-09-20T06:18:51.234Z",
+    "type": "VIDEO_LECTURE_NOT_QUALIFIED",
+    "courseTitle": "AI & ML",
+    "moduleTitle": "Intro",
+    "sectionIndex": 0,
+    "score": 70,
+    "percentage": 70,
+    "passed": false,
+    "details": "Student scored 70% on 10-question video quiz (< 80%). NOT QUALIFIED. Repeating lesson."
+  },
+  {
+    "id": "log-1789885104335-86wx",
+    "timestamp": "2026-09-20T06:18:24.335Z",
+    "type": "VIDEO_LECTURE_QUALIFIED",
+    "courseTitle": "AI & ML",
+    "moduleTitle": "Intro",
+    "sectionIndex": 0,
+    "score": 90,
+    "percentage": 90,
+    "passed": true,
+    "details": "Student scored 90% on 10-question video quiz (>= 80%). QUALIFIED to advance to next level."
+  },
+  {
+    "id": "log-1789884835565-2c8v",
+    "timestamp": "2026-09-20T06:13:55.565Z",
+    "type": "DAILY_EXAM_SUBMITTED",
+    "module_id": "course-cs-general-theory-b01",
+    "module_title": "Foundations, Core Principles & Primary Laws of Computer Sciences (General Theory)",
+    "total_percentage": 90,
+    "objective_score": 100,
+    "writing_score": 0,
+    "max_writing_score": 5,
+    "ai_feedback": "Good effort on this assessment!",
+    "status": "passed"
+  },
+  {
+    "id": "log-1789884786374-xc5n",
+    "timestamp": "2026-09-20T06:13:06.374Z",
+    "type": "all_theory_sections_completed",
+    "course_title": "Computer Sciences (General Theory)",
+    "module_title": "Foundations, Core Principles & Primary Laws of Computer Sciences (General Theory)",
+    "section_index": 3,
+    "details": "Completed all 4 theory sections for \"Foundations, Core Principles & Primary Laws of Computer Sciences (General Theory)\". Auto-advancing to Daily Exam."
+  },
+  {
+    "id": "log-1789884786365-rhmv",
+    "timestamp": "2026-09-20T06:13:06.365Z",
+    "type": "section_step_completed",
+    "course_title": "Computer Sciences (General Theory)",
+    "module_title": "Foundations, Core Principles & Primary Laws of Computer Sciences (General Theory)",
+    "section_index": 3,
+    "details": "Student clicked 'I Get It Now' on Step 4 of 4: \"4. Edge Cases, Synthesis & Daily Exam Blueprint\""
+  },
+  {
+    "id": "log-1789884753582-5pwz",
+    "timestamp": "2026-09-20T06:12:33.582Z",
+    "type": "section_step_completed",
+    "course_title": "Computer Sciences (General Theory)",
+    "module_title": "Foundations, Core Principles & Primary Laws of Computer Sciences (General Theory)",
+    "section_index": 2,
+    "details": "Student clicked 'I Get It Now' on Step 3 of 4: \"3. Production Architecture & Trade-Offs in Computer Sciences (General Theory)\""
+  },
+  {
+    "id": "log-1789884724367-tvzb",
+    "timestamp": "2026-09-20T06:12:04.368Z",
+    "type": "section_step_completed",
+    "course_title": "Computer Sciences (General Theory)",
+    "module_title": "Foundations, Core Principles & Primary Laws of Computer Sciences (General Theory)",
+    "section_index": 1,
+    "details": "Student clicked 'I Get It Now' on Step 2 of 4: \"2. Structural Mechanics & Dynamics in Computer Sciences (General Theory)\""
+  },
+  {
+    "id": "log-1789884674557-ee3o",
+    "timestamp": "2026-09-20T06:11:14.557Z",
+    "type": "section_step_completed",
+    "course_title": "Computer Sciences (General Theory)",
+    "module_title": "Foundations, Core Principles & Primary Laws of Computer Sciences (General Theory)",
+    "section_index": 0,
+    "details": "Student clicked 'I Get It Now' on Step 1 of 4: \"1. Axiomatic Core & Taxonomy of Computer Sciences (General Theory)\""
+  },
+  {
+    "id": "log-1789884263957-xtda",
+    "timestamp": "2026-09-20T06:04:23.957Z",
+    "type": "section_step_completed",
+    "course_title": "Artificial Intelligence and Machine Learning (AI & ML)",
+    "module_title": "Foundations, Core Principles & Primary Laws of tech_ai_ml",
+    "section_index": 0,
+    "details": "Student clicked I Get It Now on Section 1"
+  },
+  {
+    "id": "log-1789884237985-4q6c",
+    "timestamp": "2026-09-20T06:03:57.985Z",
+    "type": "section_step_completed",
+    "course_title": "Artificial Intelligence and Machine Learning (AI & ML)",
+    "module_title": "Foundations, Core Principles & Primary Laws of tech_ai_ml",
+    "section_index": 0,
+    "details": "Student clicked I Get It Now on Section 1"
+  },
+  {
+    "id": "log-1789884220621-9p9m",
+    "timestamp": "2026-09-20T06:03:40.621Z",
+    "type": "section_step_completed",
+    "course_title": "Artificial Intelligence and Machine Learning (AI & ML)",
+    "module_title": "Foundations, Core Principles & Primary Laws of tech_ai_ml",
+    "section_index": 0,
+    "details": "Student clicked I Get It Now on Section 1"
+  },
+  {
+    "id": "log-1789884187325-m4qe",
+    "timestamp": "2026-09-20T06:03:07.325Z",
+    "type": "section_step_completed",
+    "course_title": "Artificial Intelligence and Machine Learning (AI & ML)",
+    "module_title": "Foundations, Core Principles & Primary Laws of tech_ai_ml",
+    "section_index": 0,
+    "details": "Student clicked I Get It Now on Section 1"
+  },
+  {
+    "id": "log-1789884125083-08ca",
+    "timestamp": "2026-09-20T06:02:05.083Z",
+    "type": "section_step_completed",
+    "course_title": "Artificial Intelligence and Machine Learning (AI & ML)",
+    "module_title": "Foundations, Core Principles & Primary Laws of tech_ai_ml",
+    "section_index": 0,
+    "details": "Student clicked I Get It Now on Section 1"
+  },
+  {
+    "id": "log-init-01",
+    "timestamp": "2026-09-20T09:45:12.110Z",
+    "type": "SESSION_LOGIN",
+    "student_name": "Alex Mercer",
+    "details": "Student authenticated into MyTutor AI portal."
+  },
+  {
+    "id": "log-init-02",
+    "timestamp": "2026-09-20T09:50:20.450Z",
+    "type": "LESSON_SECTION_COMPLETED",
+    "course_title": "Data Structures & Algorithmic Mastery",
+    "module_id": "dsa-b-01",
+    "section_index": 0,
+    "section_title": "Axiomatic Core & Complexity",
+    "details": "Student clicked 'I Get It Now' on Section 1. Advanced to Section 2."
+  },
+  {
+    "id": "log-init-03",
+    "timestamp": "2026-09-20T10:02:14.320Z",
+    "type": "SINCERITY_CHECKPOINT_PASSED",
+    "student_name": "Alex Mercer",
+    "details": "Attention verification answered accurately. Response matched expected keywords [infinity, dominant, asymptotic]."
+  },
+  {
+    "id": "log-init-04",
+    "timestamp": "2026-09-20T10:15:42.890Z",
+    "type": "EXAM_SUBMISSION",
+    "module_title": "Big-O Notation & Asymptotic Complexity",
+    "objective_score": 100,
+    "writing_score": 5,
+    "total_percentage": 92,
+    "ai_feedback": "Exemplary understanding of logarithmic division mechanics. Full marks awarded across rubric.",
+    "status": "passed"
+  }
+]

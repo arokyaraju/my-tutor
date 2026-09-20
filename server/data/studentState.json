@@ -1,0 +1,141 @@
+{
+  "currentUser": {
+    "id": "std-user-001",
+    "name": "Alex Mercer",
+    "email": "alex.student@mytutor.ai",
+    "avatar": "student-1",
+    "total_xp": 2073,
+    "current_streak_days": 6,
+    "tier_mastery": {
+      "basics": 14,
+      "advanced": 0,
+      "expert": 0
+    },
+    "completed_modules": [
+      "dsa-b-01",
+      "course-cs-general-theory-b01"
+    ],
+    "in_progress_module": "dsa-b-02",
+    "sincerity_score": 92,
+    "weakness_tags": [
+      "AVL Double Rotations",
+      "Space Complexity Backwards Traversal"
+    ],
+    "strength_tags": [
+      "Asymptotic Analysis",
+      "Hash Table Operations",
+      "Contiguous Memory"
+    ],
+    "exam_history": [
+      {
+        "id": "exam-1789884835556",
+        "module_id": "course-cs-general-theory-b01",
+        "module_title": "Foundations, Core Principles & Primary Laws of Computer Sciences (General Theory)",
+        "objective_score": 100,
+        "writing_score": 0,
+        "max_writing_score": 5,
+        "total_percentage": 90,
+        "ai_feedback": "Good effort on this assessment!",
+        "writing_evaluation": null,
+        "status": "passed",
+        "timestamp": "2026-09-20T06:13:55.556Z"
+      },
+      {
+        "id": "exam-1789839314743",
+        "module_id": "dsa-b-01",
+        "module_title": "Big-O Notation & Asymptotic Complexity",
+        "objective_score": 100,
+        "writing_score": 4.5,
+        "max_writing_score": 5,
+        "total_percentage": 95,
+        "ai_feedback": "Exceptional academic articulation! You accurately integrated 5 core technical principles and provided thorough conceptual depth.",
+        "writing_evaluation": {
+          "assigned_score": 4.5,
+          "max_score": 5,
+          "percentage": 90,
+          "key_phrases_found": [
+            "sorted",
+            "halves",
+            "middle element",
+            "logarithmic",
+            "divide and conquer"
+          ],
+          "missing_keywords": [],
+          "fact_accuracy_score": 90,
+          "factual_errors_found": "None detected; statements align with official key.",
+          "constructive_feedback": "Exceptional academic articulation! You accurately integrated 5 core technical principles and provided thorough conceptual depth."
+        },
+        "status": "passed",
+        "timestamp": "2026-09-19T17:35:14.743Z"
+      },
+      {
+        "id": "exam-sub-101",
+        "module_id": "dsa-b-01",
+        "module_title": "Big-O Notation & Asymptotic Complexity",
+        "timestamp": "2026-09-18T14:30:00Z",
+        "objective_score": 85,
+        "writing_score": 4.5,
+        "max_writing_score": 5,
+        "total_percentage": 88.5,
+        "ai_feedback": "Exemplary grasp of logarithmic division and upper bounds. Mentioned 5 out of 5 required keywords.",
+        "status": "passed"
+      }
+    ]
+  },
+  "leaderboard": [
+    {
+      "rank": 1,
+      "name": "Sophia Chen",
+      "avatar": "student-3",
+      "xp": 4820,
+      "streak": 19,
+      "tier": "Expert",
+      "badge": "Algorithm Grandmaster"
+    },
+    {
+      "rank": 2,
+      "name": "Marcus Vance",
+      "avatar": "student-4",
+      "xp": 3950,
+      "streak": 14,
+      "tier": "Expert",
+      "badge": "Neural Architect"
+    },
+    {
+      "rank": 3,
+      "name": "Priya Sharma",
+      "avatar": "student-2",
+      "xp": 3120,
+      "streak": 11,
+      "tier": "Advanced",
+      "badge": "Tree Balancer"
+    },
+    {
+      "rank": 4,
+      "name": "Alex Mercer (You)",
+      "avatar": "student-1",
+      "xp": 2038,
+      "streak": 6,
+      "tier": "Advanced",
+      "badge": "Rising Scholar"
+    },
+    {
+      "rank": 5,
+      "name": "David Kim",
+      "avatar": "student-5",
+      "xp": 1420,
+      "streak": 4,
+      "tier": "Basics",
+      "badge": "Syntax Explorer"
+    },
+    {
+      "rank": 6,
+      "name": "Elena Rostova",
+      "avatar": "student-6",
+      "xp": 980,
+      "streak": 3,
+      "tier": "Basics",
+      "badge": "Fresh Initiate"
+    }
+  ]
+}
