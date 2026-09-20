@@ -77,7 +77,7 @@ export default function CourseCatalog({
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '22px' }}>
       
-      {/* Top Banner: Master 24-Domain Curriculum Hub */}
+      {/* Top Banner: Curriculum Hub */}
       <div className="glass-panel" style={{ padding: '22px' }}>
         
         {/* Header row */}
@@ -86,11 +86,11 @@ export default function CourseCatalog({
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '4px' }}>
               <span style={{ fontSize: '1.4rem' }}>🏛️</span>
               <h2 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.01em' }}>
-                Master Academic & Industry Curriculum Directory (24 Disciplines)
+                Curriculum & Course Hub {catalogDomains.length > 0 ? `(${catalogDomains.length} Disciplines)` : ''}
               </h2>
             </div>
             <p style={{ fontSize: '0.84rem', color: '#94a3b8' }}>
-              Click any subject below — the AI will synthesize the 3-tier master syllabus (Basics, Advanced, Expert) and begin elaborately teaching with live speech and interactive whiteboard drawings.
+              Build and customize your courses step by step. Upload lesson materials (PDF, Word, TXT, Excel) or enter any subject topic to synthesize a complete 3-tier curriculum.
             </p>
           </div>
 
@@ -98,7 +98,7 @@ export default function CourseCatalog({
           <form onSubmit={handleCustomSubmit} style={{ display: 'flex', gap: '8px', minWidth: '320px', flex: '1 1 320px', maxWidth: '440px' }}>
             <input
               type="text"
-              placeholder="Or enter any custom subject to synthesize..."
+              placeholder="Enter any subject to synthesize..."
               value={customTopic}
               onChange={(e) => setCustomTopic(e.target.value)}
               style={{ fontSize: '0.85rem', padding: '9px 14px', flex: 1 }}
@@ -123,7 +123,7 @@ export default function CourseCatalog({
             <Search size={16} color="#94a3b8" style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)' }} />
             <input
               type="text"
-              placeholder="Search across all 150+ specialized subjects, keywords, or governing theories..."
+              placeholder="Search across your courses, keywords, or topics..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               style={{
@@ -155,70 +155,76 @@ export default function CourseCatalog({
             )}
           </div>
 
-          {/* Domain Category Pills Carousel / Scrollable Row */}
-          <div style={{
-            display: 'flex',
-            gap: '8px',
-            overflowX: 'auto',
-            paddingBottom: '8px',
-            scrollbarWidth: 'thin'
-          }}>
-            <button
-              onClick={() => setSelectedDomainId('all')}
-              className={`btn ${selectedDomainId === 'all' ? 'btn-primary' : 'btn-secondary'}`}
-              style={{
-                fontSize: '0.78rem',
-                padding: '7px 14px',
-                whiteSpace: 'nowrap',
-                borderRadius: '20px',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '6px'
-              }}
-            >
-              <span>🌐</span>
-              All Domains (150+ Courses)
-            </button>
+          {/* Domain Category Pills Carousel (if domains exist) */}
+          {catalogDomains && catalogDomains.length > 0 && (
+            <div style={{
+              display: 'flex',
+              gap: '8px',
+              overflowX: 'auto',
+              paddingBottom: '8px',
+              scrollbarWidth: 'thin'
+            }}>
+              <button
+                onClick={() => setSelectedDomainId('all')}
+                className={`btn ${selectedDomainId === 'all' ? 'btn-primary' : 'btn-secondary'}`}
+                style={{
+                  fontSize: '0.78rem',
+                  padding: '7px 14px',
+                  whiteSpace: 'nowrap',
+                  borderRadius: '20px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '6px'
+                }}
+              >
+                <span>🌐</span>
+                All Domains ({catalogDomains.length})
+              </button>
 
-            {catalogDomains.map(domain => {
-              const isSelected = selectedDomainId === domain.id;
-              return (
-                <button
-                  key={domain.id}
-                  onClick={() => setSelectedDomainId(domain.id)}
-                  className={`btn ${isSelected ? 'btn-primary' : 'btn-secondary'}`}
-                  style={{
-                    fontSize: '0.78rem',
-                    padding: '7px 14px',
-                    whiteSpace: 'nowrap',
-                    borderRadius: '20px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '6px',
-                    border: isSelected ? '1px solid #6366f1' : '1px solid var(--border-subtle)'
-                  }}
-                >
-                  <span>{domain.emoji}</span>
-                  <span>{domain.shortName || domain.name}</span>
-                  <span style={{
-                    fontSize: '0.68rem',
-                    padding: '1px 6px',
-                    borderRadius: '10px',
-                    background: 'rgba(255, 255, 255, 0.1)'
-                  }}>
-                    {domain.courses.length}
-                  </span>
-                </button>
-              );
-            })}
-          </div>
+              {catalogDomains.map(domain => {
+                const isSelected = selectedDomainId === domain.id;
+                return (
+                  <button
+                    key={domain.id}
+                    onClick={() => setSelectedDomainId(domain.id)}
+                    className={`btn ${isSelected ? 'btn-primary' : 'btn-secondary'}`}
+                    style={{
+                      fontSize: '0.78rem',
+                      padding: '7px 14px',
+                      whiteSpace: 'nowrap',
+                      borderRadius: '20px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '6px',
+                      border: isSelected ? '1px solid #6366f1' : '1px solid var(--border-subtle)'
+                    }}
+                  >
+                    <span>{domain.emoji}</span>
+                    <span>{domain.shortName || domain.name}</span>
+                    <span style={{
+                      fontSize: '0.68rem',
+                      padding: '1px 6px',
+                      borderRadius: '10px',
+                      background: 'rgba(255, 255, 255, 0.1)'
+                    }}>
+                      {domain.courses?.length || 0}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          )}
 
         </div>
 
         {/* Results Info */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px', borderTop: '1px solid var(--border-subtle)', paddingTop: '12px' }}>
           <span style={{ fontSize: '0.8rem', color: '#94a3b8' }}>
-            Showing <strong style={{ color: '#ffffff' }}>{totalMatchingCourses}</strong> subjects across <strong style={{ color: '#ffffff' }}>{displayedDomains.length}</strong> discipline categories
+            {courses.length > 0 ? (
+              <>Showing <strong style={{ color: '#ffffff' }}>{courses.length}</strong> active course{courses.length === 1 ? '' : 's'}</>
+            ) : (
+              'Clean Slate — Ready to add domains and courses'
+            )}
           </span>
           {activeCourse && (
             <span style={{ fontSize: '0.76rem', color: '#818cf8', fontWeight: 600 }}>
