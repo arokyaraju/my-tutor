@@ -22,7 +22,9 @@ import {
   fetchCatalog, 
   structureAndTeachCourse,
   logStudentTelemetry,
-  fetchVideoLectureContent
+  fetchVideoLectureContent,
+  deleteCourse,
+  clearAllCourses
 } from './services/api';
 import { 
   Sparkles, 
@@ -38,7 +40,8 @@ import {
   Minimize2, 
   ArrowRight,
   Send,
-  HelpCircle
+  HelpCircle,
+  Trash2
 } from 'lucide-react';
 
 export default function App() {
@@ -577,6 +580,41 @@ export default function App() {
     if (result.leaderboard) setLeaderboard(result.leaderboard);
   };
 
+  // Delete single course or clear all courses
+  const handleDeleteCourse = async (courseId, courseTitle = '') => {
+    if (courseId === 'all') {
+      if (!window.confirm('Are you sure you want to delete ALL courses and uploaded study materials?')) {
+        return;
+      }
+      await clearAllCourses();
+      setCourses([]);
+      setActiveCourse(null);
+      setActiveModule(null);
+      setActiveTab('courses');
+      return;
+    }
+
+    if (!window.confirm(`Are you sure you want to delete "${courseTitle || 'this course'}"?`)) {
+      return;
+    }
+
+    const updated = await deleteCourse(courseId);
+    setCourses(updated);
+
+    if (activeCourse && (activeCourse.id === courseId || activeCourse.title === courseId)) {
+      if (updated.length > 0) {
+        const nextCourse = updated[0];
+        setActiveCourse(nextCourse);
+        const nextMod = nextCourse.tiers?.basics?.[0] || nextCourse.tiers?.advanced?.[0];
+        setActiveModule(nextMod);
+      } else {
+        setActiveCourse(null);
+        setActiveModule(null);
+        setActiveTab('courses');
+      }
+    }
+  };
+
   const currentSections = getActiveSections();
   const currentSection = currentSections[activeSectionIndex] || currentSections[0];
   const totalSections = currentSections.length;
@@ -666,6 +704,7 @@ export default function App() {
             onStructureAndTeachCourse={handleStructureAndTeachCourse}
             structuringCourseId={structuringCourseId}
             onOpenUpload={() => setIsUploadOpen(true)}
+            onDeleteCourse={handleDeleteCourse}
           />
         )}
 
@@ -713,6 +752,26 @@ export default function App() {
                 >
                   {isCatalogOpen ? 'Hide Course Browser' : 'Browse All 24 Domains & Courses'}
                 </button>
+
+                {activeCourse && (
+                  <button
+                    onClick={() => handleDeleteCourse(activeCourse.id, activeCourse.title)}
+                    className="btn btn-secondary"
+                    style={{
+                      fontSize: '0.82rem',
+                      padding: '6px 12px',
+                      color: '#f87171',
+                      borderColor: 'rgba(239, 68, 68, 0.3)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '6px'
+                    }}
+                    title="Delete this active course and return to catalog"
+                  >
+                    <Trash2 size={14} />
+                    Delete Course
+                  </button>
+                )}
               </div>
             </div>
 
@@ -730,6 +789,7 @@ export default function App() {
                 onStructureAndTeachCourse={handleStructureAndTeachCourse}
                 structuringCourseId={structuringCourseId}
                 onOpenUpload={() => setIsUploadOpen(true)}
+                onDeleteCourse={handleDeleteCourse}
               />
             )}
 

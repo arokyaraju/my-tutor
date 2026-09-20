@@ -145,6 +145,26 @@ app.post('/api/courses/upload', upload.single('file'), async (req, res) => {
   }
 });
 
+// 4b. Delete single course by ID
+app.delete('/api/courses/:id', (req, res) => {
+  const { id } = req.params;
+  let courses = loadCourses();
+  const initialCount = courses.length;
+  courses = courses.filter(c => c.id !== id && c.title !== id);
+  saveCourses(courses);
+  res.json({ 
+    status: 'success', 
+    message: `Course ${id} deleted successfully`,
+    remainingCount: courses.length 
+  });
+});
+
+// 4c. Clear all courses
+app.delete('/api/courses', (req, res) => {
+  saveCourses([]);
+  res.json({ status: 'success', message: 'All courses cleared successfully' });
+});
+
 // 5. Get current student state and leaderboard
 app.get('/api/student', (req, res) => {
   const state = loadStudentState();

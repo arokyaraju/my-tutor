@@ -56,6 +56,36 @@ export function clearAllLocalCourses() {
   } catch (e) {}
 }
 
+export async function deleteCourse(courseId) {
+  // 1. Remove from localStorage
+  const local = getLocalCourses();
+  const updated = local.filter(c => c.id !== courseId && c.title !== courseId);
+  saveLocalCourses(updated);
+
+  // 2. Try removing from server if available
+  try {
+    await fetch(`${BASE_URL}/courses/${encodeURIComponent(courseId)}`, {
+      method: 'DELETE'
+    });
+  } catch (err) {
+    console.warn('Server delete course failed, updated local storage only:', err);
+  }
+
+  return updated;
+}
+
+export async function clearAllCourses() {
+  clearAllLocalCourses();
+  try {
+    await fetch(`${BASE_URL}/courses`, {
+      method: 'DELETE'
+    });
+  } catch (err) {
+    console.warn('Server clear courses failed:', err);
+  }
+  return [];
+}
+
 export async function fetchCatalog() {
   try {
     const res = await fetch(`${BASE_URL}/catalog`);

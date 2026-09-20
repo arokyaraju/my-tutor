@@ -13,7 +13,8 @@ import {
   SlidersHorizontal,
   Flame,
   Zap,
-  Loader2
+  Loader2,
+  Trash2
 } from 'lucide-react';
 
 export default function CourseCatalog({
@@ -27,7 +28,8 @@ export default function CourseCatalog({
   onGenerateCustomTopic,
   onStructureAndTeachCourse,
   structuringCourseId = null,
-  onOpenUpload = null
+  onOpenUpload = null,
+  onDeleteCourse = null
 }) {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedDomainId, setSelectedDomainId] = useState('all');
@@ -262,15 +264,37 @@ export default function CourseCatalog({
                   </div>
                 </div>
 
-                {onOpenUpload && (
-                  <button
-                    onClick={onOpenUpload}
-                    className="btn btn-primary"
-                    style={{ fontSize: '0.78rem', padding: '6px 14px', display: 'flex', alignItems: 'center', gap: '6px' }}
-                  >
-                    <Sparkles size={13} /> + Upload Another Lesson
-                  </button>
-                )}
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  {onDeleteCourse && courses.length > 0 && (
+                    <button
+                      type="button"
+                      onClick={() => onDeleteCourse('all')}
+                      className="btn btn-secondary"
+                      style={{
+                        fontSize: '0.76rem',
+                        padding: '6px 12px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '6px',
+                        color: '#f87171',
+                        borderColor: 'rgba(239, 68, 68, 0.3)'
+                      }}
+                      title="Clear all courses and uploaded content"
+                    >
+                      <Trash2 size={13} /> Clear All
+                    </button>
+                  )}
+
+                  {onOpenUpload && (
+                    <button
+                      onClick={onOpenUpload}
+                      className="btn btn-primary"
+                      style={{ fontSize: '0.78rem', padding: '6px 14px', display: 'flex', alignItems: 'center', gap: '6px' }}
+                    >
+                      <Sparkles size={13} /> + Upload Another Lesson
+                    </button>
+                  )}
+                </div>
               </div>
 
               <div style={{
@@ -384,21 +408,58 @@ export default function CourseCatalog({
                         <span style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.76rem', color: isCurrentActive ? '#10b981' : '#64748b', fontWeight: 700 }}>
                           {isCurrentActive ? <><CheckCircle2 size={14} /> Active in Classroom</> : 'Ready to Learn'}
                         </span>
-                        <button
-                          className={isCurrentActive ? "btn btn-primary" : "btn btn-secondary"}
-                          style={{ padding: '6px 14px', fontSize: '0.78rem', display: 'flex', alignItems: 'center', gap: '6px', borderRadius: '8px' }}
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            if (onStructureAndTeachCourse) {
-                              onStructureAndTeachCourse(course, course.domain || 'Academic Curriculum');
-                            } else {
-                              onSelectCourse(course, true);
-                            }
-                          }}
-                        >
-                          <Sparkles size={13} />
-                          {isCurrentActive ? 'Resume Classroom' : 'Launch Syllabus'}
-                        </button>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                          {onDeleteCourse && (
+                            <button
+                              type="button"
+                              title={`Delete ${course.title}`}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                onDeleteCourse(course.id, course.title);
+                              }}
+                              style={{
+                                padding: '6px 10px',
+                                fontSize: '0.76rem',
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '4px',
+                                borderRadius: '8px',
+                                background: 'rgba(239, 68, 68, 0.1)',
+                                border: '1px solid rgba(239, 68, 68, 0.25)',
+                                color: '#f87171',
+                                cursor: 'pointer',
+                                transition: 'all 0.15s ease'
+                              }}
+                              onMouseEnter={(e) => {
+                                e.currentTarget.style.background = 'rgba(239, 68, 68, 0.22)';
+                                e.currentTarget.style.borderColor = '#ef4444';
+                              }}
+                              onMouseLeave={(e) => {
+                                e.currentTarget.style.background = 'rgba(239, 68, 68, 0.1)';
+                                e.currentTarget.style.borderColor = 'rgba(239, 68, 68, 0.25)';
+                              }}
+                            >
+                              <Trash2 size={13} />
+                              Delete
+                            </button>
+                          )}
+
+                          <button
+                            className={isCurrentActive ? "btn btn-primary" : "btn btn-secondary"}
+                            style={{ padding: '6px 14px', fontSize: '0.78rem', display: 'flex', alignItems: 'center', gap: '6px', borderRadius: '8px' }}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              if (onStructureAndTeachCourse) {
+                                onStructureAndTeachCourse(course, course.domain || 'Academic Curriculum');
+                              } else {
+                                onSelectCourse(course, true);
+                              }
+                            }}
+                          >
+                            <Sparkles size={13} />
+                            {isCurrentActive ? 'Resume Classroom' : 'Launch Syllabus'}
+                          </button>
+                        </div>
                       </div>
                     </div>
                   );
