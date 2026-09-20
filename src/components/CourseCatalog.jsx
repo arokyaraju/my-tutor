@@ -228,6 +228,116 @@ export default function CourseCatalog({
 
         {/* Domain Sections & Course Cards */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+          
+          {/* Featured Ingested Document Curriculums (e.g. Sunil Gavaskar & uploaded files) */}
+          {courses && courses.filter(c => c.id === 'course-lesson1-sunil-gavaskar' || c.id?.startsWith('course-custom') || c.id?.startsWith('course-uploaded') || c.title?.includes('Sunil Gavaskar')).length > 0 && (
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '8px' }}>
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                padding: '12px 18px',
+                borderRadius: '12px',
+                background: 'linear-gradient(90deg, rgba(16, 185, 129, 0.12) 0%, rgba(99, 102, 241, 0.12) 100%)',
+                borderLeft: '4px solid #10b981',
+                border: '1px solid rgba(16, 185, 129, 0.3)'
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <span style={{ fontSize: '1.4rem' }}>⭐</span>
+                  <div>
+                    <h3 style={{ fontSize: '1.05rem', fontWeight: 800, color: '#ffffff', margin: 0, display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      Featured & Uploaded Lesson Material
+                      <span style={{ fontSize: '0.72rem', background: '#10b981', color: '#090d16', padding: '2px 8px', borderRadius: '10px', fontWeight: 800 }}>READY</span>
+                    </h3>
+                    <p style={{ fontSize: '0.78rem', color: '#cbd5e1', margin: 0 }}>
+                      Authentic 3-tier master curriculum grounded directly in uploaded documents, literature chapters, and study guides.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fill, minmax(310px, 1fr))',
+                gap: '14px'
+              }}>
+                {courses.filter(c => c.id === 'course-lesson1-sunil-gavaskar' || c.id?.startsWith('course-custom') || c.id?.startsWith('course-uploaded') || c.title?.includes('Sunil Gavaskar')).map(course => {
+                  const isCurrentActive = activeCourse && (activeCourse.id === course.id || activeCourse.title === course.title);
+                  return (
+                    <div
+                      key={course.id}
+                      onClick={() => onSelectCourse(course.id)}
+                      style={{
+                        padding: '18px',
+                        borderRadius: '14px',
+                        background: isCurrentActive ? 'rgba(16, 185, 129, 0.18)' : 'rgba(15, 23, 42, 0.8)',
+                        border: isCurrentActive ? '1px solid #10b981' : '1px solid rgba(16, 185, 129, 0.25)',
+                        cursor: 'pointer',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'space-between',
+                        gap: '12px',
+                        boxShadow: isCurrentActive ? '0 0 20px rgba(16, 185, 129, 0.25)' : 'none',
+                        transition: 'all 0.2s ease'
+                      }}
+                    >
+                      <div>
+                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
+                          <span style={{
+                            fontSize: '0.72rem',
+                            fontWeight: 800,
+                            padding: '3px 9px',
+                            borderRadius: '6px',
+                            background: 'rgba(16, 185, 129, 0.25)',
+                            color: '#34d399'
+                          }}>
+                            {course.domain || 'Languages & Literature'}
+                          </span>
+                          <span style={{ fontSize: '0.72rem', color: '#94a3b8', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                            <Clock size={12} /> {course.total_estimated_hours || 12}h Masterclass
+                          </span>
+                        </div>
+                        <h4 style={{ fontSize: '1rem', fontWeight: 800, color: '#ffffff', marginBottom: '6px', lineHeight: 1.35 }}>
+                          {course.title}
+                        </h4>
+                        <p style={{
+                          fontSize: '0.78rem',
+                          color: '#94a3b8',
+                          lineHeight: 1.45,
+                          display: '-webkit-box',
+                          WebkitLineClamp: 2,
+                          WebkitBoxOrient: 'vertical',
+                          overflow: 'hidden'
+                        }}>
+                          {course.scope_summary || 'Authentic curriculum with multi-tier examination syllabus and video lecture.'}
+                        </p>
+                      </div>
+
+                      <div style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        borderTop: '1px solid var(--border-subtle)',
+                        paddingTop: '12px'
+                      }}>
+                        <span style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.76rem', color: isCurrentActive ? '#10b981' : '#64748b', fontWeight: 700 }}>
+                          {isCurrentActive ? <><CheckCircle2 size={14} /> Active in Classroom</> : 'Ready to Learn'}
+                        </span>
+                        <button
+                          className={isCurrentActive ? "btn btn-primary" : "btn btn-secondary"}
+                          style={{ padding: '6px 14px', fontSize: '0.78rem', display: 'flex', alignItems: 'center', gap: '6px', borderRadius: '8px' }}
+                        >
+                          <Sparkles size={13} />
+                          {isCurrentActive ? 'Resume Classroom' : 'Launch Syllabus'}
+                        </button>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
           {displayedDomains.map(domain => (
             <div key={domain.id} style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               

@@ -1,0 +1,1048 @@
+{
+  "id": "course-lesson1-sunil-gavaskar",
+  "title": "Lesson 1: My First Steps - Sunil Gavaskar",
+  "domain_id": "domain-literature",
+  "domain_name": "Languages, Linguistics & Literature",
+  "domain": "Languages, Linguistics & Literature",
+  "icon": "BookOpen",
+  "scope_summary": "Autobiographical analysis of Sunil Gavaskar's childhood, his near-exchange at birth saved by Nan-kaka, playing tennis-ball cricket with his mother, compound words, simple past tense grammar, and note-making study skills.",
+  "prerequisites": [
+    "Basic English Comprehension",
+    "Elementary Grammar"
+  ],
+  "total_estimated_hours": 12,
+  "video_lecture": {
+    "videoId": "q3Z3v3-9Y-o",
+    "title": "Sunil Gavaskar: The Little Master - Childhood & Legend Masterclass",
+    "provider": "Cricket History & National Literature Commons",
+    "embedUrl": "https://www.youtube.com/embed/q3Z3v3-9Y-o?rel=0&modestbranding=1",
+    "watchUrl": "https://www.youtube.com/watch?v=q3Z3v3-9Y-o",
+    "duration": "28:40",
+    "key_timestamps": [
+      {
+        "time": "01:10",
+        "title": "The Hospital Mix-Up & Nan-Kaka"
+      },
+      {
+        "time": "08:30",
+        "title": "Playing Tennis-Ball Cricket with Mother"
+      },
+      {
+        "time": "16:45",
+        "title": "Compound Words & Language Analysis"
+      },
+      {
+        "time": "23:15",
+        "title": "Note-Making Skills & Examination Prep"
+      }
+    ]
+  },
+  "tiers": {
+    "basics": [
+      {
+        "id": "gavaskar-b1",
+        "tier": "basics",
+        "title": "Childhood Narrative: Hospital Mix-up & Early Cricket Days",
+        "estimated_minutes": 30,
+        "summary": "Detailed study of Sunil Gavaskar's birth on July 10, 1949, the hospital mix-up with a fisherwoman's baby, and his early cricket training with his mother.",
+        "video_lecture": {
+          "videoId": "q3Z3v3-9Y-o",
+          "title": "Sunil Gavaskar: The Little Master - Childhood & Legend Masterclass",
+          "provider": "Cricket History & National Literature Commons",
+          "embedUrl": "https://www.youtube.com/embed/q3Z3v3-9Y-o?rel=0&modestbranding=1",
+          "watchUrl": "https://www.youtube.com/watch?v=q3Z3v3-9Y-o",
+          "duration": "28:40",
+          "key_timestamps": [
+            {
+              "time": "01:10",
+              "title": "The Hospital Mix-Up & Nan-Kaka"
+            },
+            {
+              "time": "08:30",
+              "title": "Playing Tennis-Ball Cricket with Mother"
+            },
+            {
+              "time": "16:45",
+              "title": "Compound Words & Language Analysis"
+            },
+            {
+              "time": "23:15",
+              "title": "Note-Making Skills & Examination Prep"
+            }
+          ]
+        },
+        "sections": [
+          {
+            "id": "sec-b1",
+            "title": "Part 1: The Hospital Mix-Up & Nan-Kaka's Discovery",
+            "speech_ssml": "<speak>Welcome to <emphasis level='strong'>My First Steps</emphasis> by Sunil Gavaskar! <mark name='story1'/> Born on July 10, 1949, Sunil was almost swapped at birth in the hospital! His uncle Narayan Masurekar, whom he called Nan-kaka, noticed a little hole on his left earlobe. The next day, the baby had no hole! After a frantic search, baby Sunil was found sleeping peacefully next to a fisherwoman.</speak>",
+            "whiteboard_commands": [
+              {
+                "mark_anchor": "story1",
+                "action": "draw_rect",
+                "x": 80,
+                "y": 50,
+                "width": 400,
+                "height": 70,
+                "label": "Birth: July 10, 1949 | Earlobe Hole",
+                "color": "#38bdf8"
+              },
+              {
+                "mark_anchor": "story1",
+                "action": "draw_hierarchy",
+                "x": 90,
+                "y": 140,
+                "nodes": [
+                  {
+                    "label": "1. Day 1: Nan-Kaka notices hole",
+                    "color": "#10b981"
+                  },
+                  {
+                    "label": "2. Day 2: Missing hole in crib",
+                    "color": "#f59e0b"
+                  },
+                  {
+                    "label": "3. Found with fisherwoman",
+                    "color": "#ec4899"
+                  }
+                ]
+              }
+            ],
+            "notes_content": "## Part 1: The Hospital Mix-Up\\n\\n- Born July 10, 1949.\\n- Uncle Mr. Narayan Masurekar (Nan-kaka) observed a tiny hole near the top of his left ear lobe.\\n- Next day: baby in the crib had clean earlobes!\\n- Frantic search launched across hospital wards.\\n- Baby Sunil located sleeping peacefully beside a fisherwoman.\\n- Providence and Nan-kaka's eye saved Gavaskar's identity.",
+            "key_takeaways": [
+              "Nan-kaka's observation of the earlobe hole prevented a lifelong mix-up",
+              "Sunil attributes his cricketing destiny to this providential discovery",
+              "Careful observation is established as a central theme of the text"
+            ],
+            "video_lecture": {
+              "videoId": "q3Z3v3-9Y-o",
+              "title": "Sunil Gavaskar: The Little Master - Childhood & Legend Masterclass",
+              "provider": "Cricket History & National Literature Commons",
+              "embedUrl": "https://www.youtube.com/embed/q3Z3v3-9Y-o?rel=0&modestbranding=1",
+              "watchUrl": "https://www.youtube.com/watch?v=q3Z3v3-9Y-o",
+              "duration": "28:40",
+              "key_timestamps": [
+                {
+                  "time": "01:10",
+                  "title": "The Hospital Mix-Up & Nan-Kaka"
+                },
+                {
+                  "time": "08:30",
+                  "title": "Playing Tennis-Ball Cricket with Mother"
+                },
+                {
+                  "time": "16:45",
+                  "title": "Compound Words & Language Analysis"
+                },
+                {
+                  "time": "23:15",
+                  "title": "Note-Making Skills & Examination Prep"
+                }
+              ]
+            }
+          },
+          {
+            "id": "sec-b2",
+            "title": "Part 2: Early Cricket Days with Mother & The Bleeding Nose",
+            "speech_ssml": "<speak>Now let us look at Sunil's earliest cricket matches! <mark name='cricket1'/> He played daily in the house gallery with his mother. One day, a straight drive hit his mother directly on the nose, causing it to bleed! Despite the pain, she washed her face and continued bowling, encouraging his dedication!</speak>",
+            "whiteboard_commands": [
+              {
+                "mark_anchor": "cricket1",
+                "action": "draw_rect",
+                "x": 80,
+                "y": 50,
+                "width": 400,
+                "height": 70,
+                "label": "Tennis-Ball Cricket in House Gallery",
+                "color": "#10b981"
+              },
+              {
+                "mark_anchor": "cricket1",
+                "action": "draw_linked_nodes",
+                "x": 60,
+                "y": 140,
+                "title": "The Incident",
+                "nodes": [
+                  {
+                    "val": "Tennis Ball",
+                    "next": "Straight Drive"
+                  },
+                  {
+                    "val": "Straight Drive",
+                    "next": "Nose Bleed"
+                  },
+                  {
+                    "val": "Nose Bleed",
+                    "next": "Resumed Match"
+                  }
+                ],
+                "color": "#f59e0b"
+              }
+            ],
+            "notes_content": "## Part 2: Early Childhood Cricket\\n\\n- Practiced with tennis balls inside the narrow gallery of his home.\\n- His mother bowled to him patiently every afternoon.\\n- A powerful straight drive struck his mother's nose, causing heavy bleeding.\\n- Demonstrating heroic composure, she stemmed the blood and insisted on continuing the game.",
+            "key_takeaways": [
+              "Maternal dedication laid the psychological foundation for Gavaskar's sportsmanship",
+              "Relentless practice in confined spaces sharpened his straight-drive technique",
+              "Resilience under adversity was modeled by his mother"
+            ],
+            "video_lecture": {
+              "videoId": "q3Z3v3-9Y-o",
+              "title": "Sunil Gavaskar: The Little Master - Childhood & Legend Masterclass",
+              "provider": "Cricket History & National Literature Commons",
+              "embedUrl": "https://www.youtube.com/embed/q3Z3v3-9Y-o?rel=0&modestbranding=1",
+              "watchUrl": "https://www.youtube.com/watch?v=q3Z3v3-9Y-o",
+              "duration": "28:40",
+              "key_timestamps": [
+                {
+                  "time": "01:10",
+                  "title": "The Hospital Mix-Up & Nan-Kaka"
+                },
+                {
+                  "time": "08:30",
+                  "title": "Playing Tennis-Ball Cricket with Mother"
+                },
+                {
+                  "time": "16:45",
+                  "title": "Compound Words & Language Analysis"
+                },
+                {
+                  "time": "23:15",
+                  "title": "Note-Making Skills & Examination Prep"
+                }
+              ]
+            }
+          },
+          {
+            "id": "sec-b3",
+            "title": "Part 3: Intext Comprehension & Character Dynamics",
+            "speech_ssml": "<speak>Let us analyze the key figures in this autobiography. <mark name='traits1'/> Nan-kaka is eagle-eyed and vigilant. His mother is selfless and encouraging. Sunil is humble, passionate, and deeply grateful to his family.</speak>",
+            "whiteboard_commands": [
+              {
+                "mark_anchor": "traits1",
+                "action": "draw_hierarchy",
+                "x": 90,
+                "y": 80,
+                "nodes": [
+                  {
+                    "label": "Nan-Kaka: Eagle-eyed & Alert",
+                    "color": "#38bdf8"
+                  },
+                  {
+                    "label": "Mother: Resilient & Encouraging",
+                    "color": "#10b981"
+                  },
+                  {
+                    "label": "Sunil: Passionate & Modest",
+                    "color": "#f59e0b"
+                  }
+                ]
+              }
+            ],
+            "notes_content": "## Part 3: Character Analysis\\n\\n- **Narayan Masurekar (Nan-kaka)**: Observant, decisive, caring relative.\\n- **Sunil's Mother**: Patient mentor, prioritized her son's passion over personal discomfort.\\n- **Tone of the Text**: Humorous, modest, rich in sensory detail and gratitude.",
+            "key_takeaways": [
+              "Character traits are revealed through concrete actions rather than abstract assertions",
+              "Family mentors provide critical encouragement during early development",
+              "Prepare for 1 and 2 marker factual recall questions"
+            ],
+            "video_lecture": {
+              "videoId": "q3Z3v3-9Y-o",
+              "title": "Sunil Gavaskar: The Little Master - Childhood & Legend Masterclass",
+              "provider": "Cricket History & National Literature Commons",
+              "embedUrl": "https://www.youtube.com/embed/q3Z3v3-9Y-o?rel=0&modestbranding=1",
+              "watchUrl": "https://www.youtube.com/watch?v=q3Z3v3-9Y-o",
+              "duration": "28:40",
+              "key_timestamps": [
+                {
+                  "time": "01:10",
+                  "title": "The Hospital Mix-Up & Nan-Kaka"
+                },
+                {
+                  "time": "08:30",
+                  "title": "Playing Tennis-Ball Cricket with Mother"
+                },
+                {
+                  "time": "16:45",
+                  "title": "Compound Words & Language Analysis"
+                },
+                {
+                  "time": "23:15",
+                  "title": "Note-Making Skills & Examination Prep"
+                }
+              ]
+            }
+          },
+          {
+            "id": "sec-b4",
+            "title": "Part 4: Narrative Synthesis & Sincerity Check",
+            "speech_ssml": "<speak>To conclude our narrative foundations: <mark name='summary1'/> Every sporting champion begins with humble steps and attentive guardians. Let us verify your comprehension before we advance to the vocabulary and grammar workshop!</speak>",
+            "whiteboard_commands": [
+              {
+                "mark_anchor": "summary1",
+                "action": "draw_tree",
+                "title": "Narrative Arc: My First Steps",
+                "nodes": [
+                  {
+                    "id": 1,
+                    "val": "July 10, 1949: Birth",
+                    "x": 250,
+                    "y": 50,
+                    "color": "#6366f1"
+                  },
+                  {
+                    "id": 2,
+                    "parent": 1,
+                    "val": "Saved by Nan-kaka",
+                    "x": 140,
+                    "y": 130,
+                    "color": "#38bdf8"
+                  },
+                  {
+                    "id": 3,
+                    "parent": 1,
+                    "val": "Practicing with Mother",
+                    "x": 360,
+                    "y": 130,
+                    "color": "#10b981"
+                  }
+                ],
+                "color": "#6366f1"
+              }
+            ],
+            "notes_content": "## Part 4: Narrative Summary\\n\\n- Two defining childhood incidents: the hospital exchange and the broken nose.\\n- Highlights how chance and family care shape human potential.\\n- Gateway to the Advanced Tier: Compound words and simple past grammar.",
+            "key_takeaways": [
+              "Summarize autobiographical events with chronological accuracy",
+              "Explain moral themes of vigilance, resilience, and gratitude",
+              "Ready to advance to Advanced Tier language skills"
+            ],
+            "video_lecture": {
+              "videoId": "q3Z3v3-9Y-o",
+              "title": "Sunil Gavaskar: The Little Master - Childhood & Legend Masterclass",
+              "provider": "Cricket History & National Literature Commons",
+              "embedUrl": "https://www.youtube.com/embed/q3Z3v3-9Y-o?rel=0&modestbranding=1",
+              "watchUrl": "https://www.youtube.com/watch?v=q3Z3v3-9Y-o",
+              "duration": "28:40",
+              "key_timestamps": [
+                {
+                  "time": "01:10",
+                  "title": "The Hospital Mix-Up & Nan-Kaka"
+                },
+                {
+                  "time": "08:30",
+                  "title": "Playing Tennis-Ball Cricket with Mother"
+                },
+                {
+                  "time": "16:45",
+                  "title": "Compound Words & Language Analysis"
+                },
+                {
+                  "time": "23:15",
+                  "title": "Note-Making Skills & Examination Prep"
+                }
+              ]
+            }
+          }
+        ],
+        "exam_questions": [
+          {
+            "id": 1,
+            "type": "mcq",
+            "question": "What unique physical feature on baby Sunil did Nan-kaka notice on his first visit to the hospital?",
+            "options": [
+              "A birthmark on his right cheek",
+              "A small hole near the top of his left ear lobe",
+              "A scar across his forehead",
+              "Six fingers on his left hand"
+            ],
+            "correct_index": 1,
+            "marks": 1,
+            "explanation": "Nan-kaka specifically noticed a tiny hole near the top of Sunil's left ear lobe on July 10, 1949."
+          },
+          {
+            "id": 2,
+            "type": "mcq",
+            "question": "Where was baby Sunil eventually found after Nan-kaka sounded the alarm?",
+            "options": [
+              "In the hospital laundry room",
+              "In an incubator",
+              "Sleeping peacefully beside a fisherwoman",
+              "Under a nurse's table"
+            ],
+            "correct_index": 2,
+            "marks": 2,
+            "explanation": "Sunil had been accidentally placed in a crib next to a fisherwoman after the babies were bathed."
+          },
+          {
+            "id": 3,
+            "type": "descriptive",
+            "question": "Describe how Sunil Gavaskar's mother reacted when hit by his straight drive, and explain what this reveals about her character.",
+            "marks": 5,
+            "answer_key": "When hit on the nose by Sunil's tennis ball, causing it to bleed, his mother calmly washed her face, stopped the bleeding, and insisted on bowling to him again. This reveals her immense patience, resilience, and deep encouragement of her son's passion for cricket.",
+            "essential_keywords": [
+              "tennis ball",
+              "nose",
+              "bleeding",
+              "washed face",
+              "continued bowling",
+              "patience",
+              "encouragement",
+              "resilience"
+            ]
+          }
+        ]
+      }
+    ],
+    "advanced": [
+      {
+        "id": "gavaskar-a1",
+        "tier": "advanced",
+        "title": "Vocabulary Enrichment & Grammar Mastery",
+        "estimated_minutes": 40,
+        "summary": "In-depth study of compound words (open, hyphenated, closed), Simple Past Tense verb conjugations, 'would' vs 'used to' for past habits, and forming questions with 'did'.",
+        "video_lecture": {
+          "videoId": "q3Z3v3-9Y-o",
+          "title": "Sunil Gavaskar: The Little Master - Childhood & Legend Masterclass",
+          "provider": "Cricket History & National Literature Commons",
+          "embedUrl": "https://www.youtube.com/embed/q3Z3v3-9Y-o?rel=0&modestbranding=1",
+          "watchUrl": "https://www.youtube.com/watch?v=q3Z3v3-9Y-o",
+          "duration": "28:40",
+          "key_timestamps": [
+            {
+              "time": "01:10",
+              "title": "The Hospital Mix-Up & Nan-Kaka"
+            },
+            {
+              "time": "08:30",
+              "title": "Playing Tennis-Ball Cricket with Mother"
+            },
+            {
+              "time": "16:45",
+              "title": "Compound Words & Language Analysis"
+            },
+            {
+              "time": "23:15",
+              "title": "Note-Making Skills & Examination Prep"
+            }
+          ]
+        },
+        "sections": [
+          {
+            "id": "sec-a1",
+            "title": "Part 1: Formation & Classification of Compound Words",
+            "speech_ssml": "<speak>Welcome to the Advanced Language Workshop! <mark name='comp1'/> A compound word joins two distinct words together to form a brand new meaning. Notice the three types: open compounds like 'gas stove', hyphenated compounds like 'eagle-eyed', and closed compounds like 'earlobe' and 'fisherwoman'!</speak>",
+            "whiteboard_commands": [
+              {
+                "mark_anchor": "comp1",
+                "action": "draw_rect",
+                "x": 80,
+                "y": 50,
+                "width": 400,
+                "height": 70,
+                "label": "Compound Words: Word 1 + Word 2",
+                "color": "#8b5cf6"
+              },
+              {
+                "mark_anchor": "comp1",
+                "action": "draw_hierarchy",
+                "x": 90,
+                "y": 140,
+                "nodes": [
+                  {
+                    "label": "Closed: earlobe, newborn",
+                    "color": "#10b981"
+                  },
+                  {
+                    "label": "Hyphenated: eagle-eyed",
+                    "color": "#f59e0b"
+                  },
+                  {
+                    "label": "Open: tennis ball, car park",
+                    "color": "#38bdf8"
+                  }
+                ]
+              }
+            ],
+            "notes_content": "## Part 1: Compound Words\\n\\n1. **Closed**: *earlobe, fisherwoman, newborn, courtyard, daydream*\\n2. **Hyphenated**: *eagle-eyed, right-handed, tennis-ball*\\n3. **Open**: *gas stove, bus stop, car park*\\n\\nEach type acts as a single semantic unit.",
+            "key_takeaways": [
+              "Compound words unite two words to create new, enriched vocabulary",
+              "Differentiate between closed, hyphenated, and open compound forms",
+              "Identify compound words in English literature passages"
+            ],
+            "video_lecture": {
+              "videoId": "q3Z3v3-9Y-o",
+              "title": "Sunil Gavaskar: The Little Master - Childhood & Legend Masterclass",
+              "provider": "Cricket History & National Literature Commons",
+              "embedUrl": "https://www.youtube.com/embed/q3Z3v3-9Y-o?rel=0&modestbranding=1",
+              "watchUrl": "https://www.youtube.com/watch?v=q3Z3v3-9Y-o",
+              "duration": "28:40",
+              "key_timestamps": [
+                {
+                  "time": "01:10",
+                  "title": "The Hospital Mix-Up & Nan-Kaka"
+                },
+                {
+                  "time": "08:30",
+                  "title": "Playing Tennis-Ball Cricket with Mother"
+                },
+                {
+                  "time": "16:45",
+                  "title": "Compound Words & Language Analysis"
+                },
+                {
+                  "time": "23:15",
+                  "title": "Note-Making Skills & Examination Prep"
+                }
+              ]
+            }
+          },
+          {
+            "id": "sec-a2",
+            "title": "Part 2: The Simple Past Tense & Irregular Past Verbs",
+            "speech_ssml": "<speak>Let us master the Simple Past Tense! <mark name='past1'/> Regular verbs add '-ed', but irregular verbs change their vowel structure completely. Gavaskar writes: 'Nan-kaka came', 'he saw', 'the baby did not have', and 'a frantic search began'.</speak>",
+            "whiteboard_commands": [
+              {
+                "mark_anchor": "past1",
+                "action": "draw_rect",
+                "x": 80,
+                "y": 50,
+                "width": 400,
+                "height": 70,
+                "label": "Simple Past: Subject + V2 (Past Form)",
+                "color": "#10b981"
+              },
+              {
+                "mark_anchor": "past1",
+                "action": "draw_linked_nodes",
+                "x": 60,
+                "y": 140,
+                "title": "Irregular Conjugations",
+                "nodes": [
+                  {
+                    "val": "Come",
+                    "next": "Came"
+                  },
+                  {
+                    "val": "See",
+                    "next": "Saw"
+                  },
+                  {
+                    "val": "Begin",
+                    "next": "Began"
+                  }
+                ],
+                "color": "#38bdf8"
+              }
+            ],
+            "notes_content": "## Part 2: Simple Past Tense (V2)\\n\\n- Used for actions completed at a specific time in the past.\\n- Regular: *noticed, played, washed, stemmed, continued*\\n- Irregular: *came, saw, gave, found, began, struck*\\n- Key rule: maintain past tense consistency across paragraphs.",
+            "key_takeaways": [
+              "Autobiographical accounts depend on correct Simple Past conjugations",
+              "Identify irregular verbs that do not follow the standard '-ed' rule",
+              "Apply correct verb forms in narrative sentence construction"
+            ],
+            "video_lecture": {
+              "videoId": "q3Z3v3-9Y-o",
+              "title": "Sunil Gavaskar: The Little Master - Childhood & Legend Masterclass",
+              "provider": "Cricket History & National Literature Commons",
+              "embedUrl": "https://www.youtube.com/embed/q3Z3v3-9Y-o?rel=0&modestbranding=1",
+              "watchUrl": "https://www.youtube.com/watch?v=q3Z3v3-9Y-o",
+              "duration": "28:40",
+              "key_timestamps": [
+                {
+                  "time": "01:10",
+                  "title": "The Hospital Mix-Up & Nan-Kaka"
+                },
+                {
+                  "time": "08:30",
+                  "title": "Playing Tennis-Ball Cricket with Mother"
+                },
+                {
+                  "time": "16:45",
+                  "title": "Compound Words & Language Analysis"
+                },
+                {
+                  "time": "23:15",
+                  "title": "Note-Making Skills & Examination Prep"
+                }
+              ]
+            }
+          },
+          {
+            "id": "sec-a3",
+            "title": "Part 3: Past Habits: Using 'Used to' and 'Would'",
+            "speech_ssml": "<speak>How do we describe repeated past actions? <mark name='habit1'/> We use <emphasis level='strong'>used to</emphasis> and <emphasis level='strong'>would</emphasis>! Sunil 'used to play' tennis-ball cricket with his mother every afternoon. 'Used to' describes states or habits, while 'would' describes repeated past routines.</speak>",
+            "whiteboard_commands": [
+              {
+                "mark_anchor": "habit1",
+                "action": "draw_rect",
+                "x": 80,
+                "y": 50,
+                "width": 400,
+                "height": 70,
+                "label": "Used to / Would + Base Verb",
+                "color": "#f59e0b"
+              }
+            ],
+            "notes_content": "## Part 3: Past Habits\\n\\n- **Used to**: States or habits no longer true (*He used to play in the gallery*).\\n- **Would**: Repeated routine actions in past narratives (*His mother would bowl to him*).\\n- Always followed by the base infinitive form of the verb.",
+            "key_takeaways": [
+              "Differentiate between one-time past events and habitual past routines",
+              "Construct sentences expressing past hobbies using 'used to' and 'would'",
+              "Recognize nuanced stylistic differences in narrative prose"
+            ],
+            "video_lecture": {
+              "videoId": "q3Z3v3-9Y-o",
+              "title": "Sunil Gavaskar: The Little Master - Childhood & Legend Masterclass",
+              "provider": "Cricket History & National Literature Commons",
+              "embedUrl": "https://www.youtube.com/embed/q3Z3v3-9Y-o?rel=0&modestbranding=1",
+              "watchUrl": "https://www.youtube.com/watch?v=q3Z3v3-9Y-o",
+              "duration": "28:40",
+              "key_timestamps": [
+                {
+                  "time": "01:10",
+                  "title": "The Hospital Mix-Up & Nan-Kaka"
+                },
+                {
+                  "time": "08:30",
+                  "title": "Playing Tennis-Ball Cricket with Mother"
+                },
+                {
+                  "time": "16:45",
+                  "title": "Compound Words & Language Analysis"
+                },
+                {
+                  "time": "23:15",
+                  "title": "Note-Making Skills & Examination Prep"
+                }
+              ]
+            }
+          },
+          {
+            "id": "sec-a4",
+            "title": "Part 4: Forming Negative & Interrogative Sentences with 'Did'",
+            "speech_ssml": "<speak>To ask questions or form negatives in the past: <mark name='did1'/> Always use <emphasis level='strong'>did</emphasis> with the base verb! Say: 'Did he notice the mark?' Never say 'Did he noticed'. The auxiliary 'did' already carries the past tense!</speak>",
+            "whiteboard_commands": [
+              {
+                "mark_anchor": "did1",
+                "action": "draw_rect",
+                "x": 80,
+                "y": 50,
+                "width": 400,
+                "height": 70,
+                "label": "Did + Subject + V1 (Base Form)?",
+                "color": "#8b5cf6"
+              }
+            ],
+            "notes_content": "## Part 4: Negative & Question Forms\\n\\n- **Negative**: Subject + did not (didn't) + V1 (*He did not notice*).\\n- **Question**: Did + Subject + V1 (*Did he notice the baby?*).\\n- Golden Rule: Never pair 'did' with a V2 past-tense verb.",
+            "key_takeaways": [
+              "The auxiliary verb 'did' carries the past tense mark",
+              "The lexical verb must revert to its uninflected base form",
+              "Practice error-correction for common grammatical examination traps"
+            ],
+            "video_lecture": {
+              "videoId": "q3Z3v3-9Y-o",
+              "title": "Sunil Gavaskar: The Little Master - Childhood & Legend Masterclass",
+              "provider": "Cricket History & National Literature Commons",
+              "embedUrl": "https://www.youtube.com/embed/q3Z3v3-9Y-o?rel=0&modestbranding=1",
+              "watchUrl": "https://www.youtube.com/watch?v=q3Z3v3-9Y-o",
+              "duration": "28:40",
+              "key_timestamps": [
+                {
+                  "time": "01:10",
+                  "title": "The Hospital Mix-Up & Nan-Kaka"
+                },
+                {
+                  "time": "08:30",
+                  "title": "Playing Tennis-Ball Cricket with Mother"
+                },
+                {
+                  "time": "16:45",
+                  "title": "Compound Words & Language Analysis"
+                },
+                {
+                  "time": "23:15",
+                  "title": "Note-Making Skills & Examination Prep"
+                }
+              ]
+            }
+          }
+        ],
+        "exam_questions": [
+          {
+            "id": 1,
+            "type": "mcq",
+            "question": "Which of the following is a hyphenated compound word from Lesson 1?",
+            "options": [
+              "Earlobe",
+              "Fisherwoman",
+              "Eagle-eyed",
+              "Courtyard"
+            ],
+            "correct_index": 2,
+            "marks": 1,
+            "explanation": "'Eagle-eyed' is a hyphenated compound adjective describing Nan-kaka's sharp vision."
+          },
+          {
+            "id": 2,
+            "type": "mcq",
+            "question": "What is the correct interrogative form of: 'Nan-kaka came to the hospital'?",
+            "options": [
+              "Did Nan-kaka came to the hospital?",
+              "Did Nan-kaka come to the hospital?",
+              "Was Nan-kaka come to the hospital?",
+              "Had Nan-kaka came to the hospital?"
+            ],
+            "correct_index": 1,
+            "marks": 2,
+            "explanation": "When using 'Did', the verb reverts to base form 'come'."
+          },
+          {
+            "id": 3,
+            "type": "descriptive",
+            "question": "Explain the grammatical difference between 'used to' and the simple past tense, providing two examples based on Sunil Gavaskar's childhood.",
+            "marks": 5,
+            "answer_key": "The simple past tense refers to completed actions at a specific time (e.g., 'He struck his mother on the nose on July 10'). In contrast, 'used to' expresses recurring habits or states in the past that are no longer true (e.g., 'He used to play tennis-ball cricket with his mother every afternoon').",
+            "essential_keywords": [
+              "simple past",
+              "used to",
+              "habit",
+              "recurring",
+              "completed action",
+              "afternoon"
+            ]
+          }
+        ]
+      }
+    ],
+    "expert": [
+      {
+        "id": "gavaskar-e1",
+        "tier": "expert",
+        "title": "Note-Making Skills & Comprehensive Character Analysis",
+        "estimated_minutes": 50,
+        "summary": "Advanced academic study skills: Note-making principles, abbreviations, hierarchical outlining, family influence analysis, and 10-marker essay synthesis.",
+        "video_lecture": {
+          "videoId": "q3Z3v3-9Y-o",
+          "title": "Sunil Gavaskar: The Little Master - Childhood & Legend Masterclass",
+          "provider": "Cricket History & National Literature Commons",
+          "embedUrl": "https://www.youtube.com/embed/q3Z3v3-9Y-o?rel=0&modestbranding=1",
+          "watchUrl": "https://www.youtube.com/watch?v=q3Z3v3-9Y-o",
+          "duration": "28:40",
+          "key_timestamps": [
+            {
+              "time": "01:10",
+              "title": "The Hospital Mix-Up & Nan-Kaka"
+            },
+            {
+              "time": "08:30",
+              "title": "Playing Tennis-Ball Cricket with Mother"
+            },
+            {
+              "time": "16:45",
+              "title": "Compound Words & Language Analysis"
+            },
+            {
+              "time": "23:15",
+              "title": "Note-Making Skills & Examination Prep"
+            }
+          ]
+        },
+        "sections": [
+          {
+            "id": "sec-e1",
+            "title": "Part 1: Note-Making Principles & Structural Outlining",
+            "speech_ssml": "<speak>Welcome to Expert Tier! <mark name='notes1'/> Note-making is a vital academic skill taught in this chapter. Never write full sentences. Condense paragraphs into numbered headings, sub-headings, and standard abbreviations like 'e.g.', 'govt.', or 'deptt.'.</speak>",
+            "whiteboard_commands": [
+              {
+                "mark_anchor": "notes1",
+                "action": "draw_tree",
+                "title": "Note-Making Structure",
+                "nodes": [
+                  {
+                    "id": 1,
+                    "val": "Main Title",
+                    "x": 250,
+                    "y": 50,
+                    "color": "#6366f1"
+                  },
+                  {
+                    "id": 2,
+                    "parent": 1,
+                    "val": "1. Main Heading",
+                    "x": 140,
+                    "y": 130,
+                    "color": "#38bdf8"
+                  },
+                  {
+                    "id": 3,
+                    "parent": 1,
+                    "val": "1.1 Sub-heading",
+                    "x": 360,
+                    "y": 130,
+                    "color": "#10b981"
+                  }
+                ],
+                "color": "#6366f1"
+              }
+            ],
+            "notes_content": "## Part 1: Note-Making Mechanics\\n\\n1. **Heading**: Central topic of passage.\\n2. **Sub-headings**: Secondary details indented.\\n3. **Points**: Brief phrases, not full sentences.\\n4. **Abbreviations**: Minimum 4 standard abbreviations.\\n5. **Key to Abbreviations**: Included at the end.",
+            "key_takeaways": [
+              "Extract essential facts while eliminating extraneous grammatical filler",
+              "Maintain consistent decimal or alphanumeric indentation",
+              "Essential skill for high marks in board English examinations"
+            ],
+            "video_lecture": {
+              "videoId": "q3Z3v3-9Y-o",
+              "title": "Sunil Gavaskar: The Little Master - Childhood & Legend Masterclass",
+              "provider": "Cricket History & National Literature Commons",
+              "embedUrl": "https://www.youtube.com/embed/q3Z3v3-9Y-o?rel=0&modestbranding=1",
+              "watchUrl": "https://www.youtube.com/watch?v=q3Z3v3-9Y-o",
+              "duration": "28:40",
+              "key_timestamps": [
+                {
+                  "time": "01:10",
+                  "title": "The Hospital Mix-Up & Nan-Kaka"
+                },
+                {
+                  "time": "08:30",
+                  "title": "Playing Tennis-Ball Cricket with Mother"
+                },
+                {
+                  "time": "16:45",
+                  "title": "Compound Words & Language Analysis"
+                },
+                {
+                  "time": "23:15",
+                  "title": "Note-Making Skills & Examination Prep"
+                }
+              ]
+            }
+          },
+          {
+            "id": "sec-e2",
+            "title": "Part 2: Family Influence Matrix: Mentors & Moral Lessons",
+            "speech_ssml": "<speak>Let us analyze the family influence on Sunil's growth. <mark name='family1'/> His mother gave him dedication and basic practice. His father gave him technical advice. His uncle Madhav Mantri taught him the moral lesson: there are no shortcuts to success—he must sweat to earn the India colours!</speak>",
+            "whiteboard_commands": [
+              {
+                "mark_anchor": "family1",
+                "action": "draw_rect",
+                "x": 80,
+                "y": 50,
+                "width": 400,
+                "height": 75,
+                "label": "Madhav Mantri: 'Sweat to Earn India Colours'",
+                "color": "#06b6d4"
+              }
+            ],
+            "notes_content": "## Part 2: Family Influence Matrix\\n\\n- **Mother**: Maternal patience, tennis-ball bowler, resilient reaction to injury.\\n- **Father**: Technical advice, cricketing discussions.\\n- **Uncle Madhav Mantri (former Indian test cricketer)**: Taught integrity; refused to give Sunil his India cap, stating that one must sweat to earn it.",
+            "key_takeaways": [
+              "Mentorship shapes ethical and professional excellence",
+              "Sunil learned that merit and hard work surpass nepotism or entitlement",
+              "Synthesize thematic evidence for long-form critical essays"
+            ],
+            "video_lecture": {
+              "videoId": "q3Z3v3-9Y-o",
+              "title": "Sunil Gavaskar: The Little Master - Childhood & Legend Masterclass",
+              "provider": "Cricket History & National Literature Commons",
+              "embedUrl": "https://www.youtube.com/embed/q3Z3v3-9Y-o?rel=0&modestbranding=1",
+              "watchUrl": "https://www.youtube.com/watch?v=q3Z3v3-9Y-o",
+              "duration": "28:40",
+              "key_timestamps": [
+                {
+                  "time": "01:10",
+                  "title": "The Hospital Mix-Up & Nan-Kaka"
+                },
+                {
+                  "time": "08:30",
+                  "title": "Playing Tennis-Ball Cricket with Mother"
+                },
+                {
+                  "time": "16:45",
+                  "title": "Compound Words & Language Analysis"
+                },
+                {
+                  "time": "23:15",
+                  "title": "Note-Making Skills & Examination Prep"
+                }
+              ]
+            }
+          },
+          {
+            "id": "sec-e3",
+            "title": "Part 3: Speaking Skills: Asking and Answering Questions",
+            "speech_ssml": "<speak>Language is both written and spoken! <mark name='speak1'/> Practice asking clear, polite questions using who, what, where, and when. Notice how Sunil frames questions about fate and destiny with proper conversational cadence.</speak>",
+            "whiteboard_commands": [
+              {
+                "mark_anchor": "speak1",
+                "action": "draw_rect",
+                "x": 80,
+                "y": 50,
+                "width": 400,
+                "height": 75,
+                "label": "Interrogative Cadence & Wh- Formulations",
+                "color": "#f59e0b"
+              }
+            ],
+            "notes_content": "## Part 3: Spoken English & Inquiry\\n\\n- Wh- questions use falling intonation (*Where was the baby found?*).\\n- Yes/No questions use rising intonation (*Did Nan-kaka see the hole?*).\\n- Clear articulation of consonant blends.",
+            "key_takeaways": [
+              "Master conversational cadence and interrogative intonation",
+              "Ask probing questions during oral examinations",
+              "Engage in interactive AI speech checks with Dr. Nova"
+            ],
+            "video_lecture": {
+              "videoId": "q3Z3v3-9Y-o",
+              "title": "Sunil Gavaskar: The Little Master - Childhood & Legend Masterclass",
+              "provider": "Cricket History & National Literature Commons",
+              "embedUrl": "https://www.youtube.com/embed/q3Z3v3-9Y-o?rel=0&modestbranding=1",
+              "watchUrl": "https://www.youtube.com/watch?v=q3Z3v3-9Y-o",
+              "duration": "28:40",
+              "key_timestamps": [
+                {
+                  "time": "01:10",
+                  "title": "The Hospital Mix-Up & Nan-Kaka"
+                },
+                {
+                  "time": "08:30",
+                  "title": "Playing Tennis-Ball Cricket with Mother"
+                },
+                {
+                  "time": "16:45",
+                  "title": "Compound Words & Language Analysis"
+                },
+                {
+                  "time": "23:15",
+                  "title": "Note-Making Skills & Examination Prep"
+                }
+              ]
+            }
+          },
+          {
+            "id": "sec-e4",
+            "title": "Part 4: Comprehensive Synthesis & 10-Marker Exam Preparation",
+            "speech_ssml": "<speak>Congratulations! <mark name='final1'/> You have mastered the complete narrative, vocabulary, grammar, and study skills of <emphasis level='strong'>My First Steps</emphasis>. You are now fully prepared to write your final 10-marker descriptive examination!</speak>",
+            "whiteboard_commands": [
+              {
+                "mark_anchor": "final1",
+                "action": "draw_tree",
+                "title": "My First Steps - Master Synthesis",
+                "nodes": [
+                  {
+                    "id": 1,
+                    "val": "Sunil Gavaskar",
+                    "x": 250,
+                    "y": 40,
+                    "color": "#6366f1"
+                  },
+                  {
+                    "id": 2,
+                    "parent": 1,
+                    "val": "Story: Ear-hole Discovery",
+                    "x": 100,
+                    "y": 120,
+                    "color": "#38bdf8"
+                  },
+                  {
+                    "id": 3,
+                    "parent": 1,
+                    "val": "Grammar: Simple Past & Compounds",
+                    "x": 250,
+                    "y": 120,
+                    "color": "#10b981"
+                  },
+                  {
+                    "id": 4,
+                    "parent": 1,
+                    "val": "Skills: Note-Making & Ethics",
+                    "x": 400,
+                    "y": 120,
+                    "color": "#f59e0b"
+                  }
+                ],
+                "color": "#6366f1"
+              }
+            ],
+            "notes_content": "## Part 4: Comprehensive Mastery\\n\\n- Complete command over story details (July 10, 1949, Nan-kaka, fisherwoman, tennis-ball match).\\n- Full control of compound word formation and Simple Past tense.\\n- Proficiency in note-making conventions.\\n- Ready for the Daily Examination!",
+            "key_takeaways": [
+              "Confidently synthesize multi-paragraph narrative essays",
+              "Include specific dates, names, and grammatical terms to earn full marks",
+              "Attain top ranking on the global student leaderboard"
+            ],
+            "video_lecture": {
+              "videoId": "q3Z3v3-9Y-o",
+              "title": "Sunil Gavaskar: The Little Master - Childhood & Legend Masterclass",
+              "provider": "Cricket History & National Literature Commons",
+              "embedUrl": "https://www.youtube.com/embed/q3Z3v3-9Y-o?rel=0&modestbranding=1",
+              "watchUrl": "https://www.youtube.com/watch?v=q3Z3v3-9Y-o",
+              "duration": "28:40",
+              "key_timestamps": [
+                {
+                  "time": "01:10",
+                  "title": "The Hospital Mix-Up & Nan-Kaka"
+                },
+                {
+                  "time": "08:30",
+                  "title": "Playing Tennis-Ball Cricket with Mother"
+                },
+                {
+                  "time": "16:45",
+                  "title": "Compound Words & Language Analysis"
+                },
+                {
+                  "time": "23:15",
+                  "title": "Note-Making Skills & Examination Prep"
+                }
+              ]
+            }
+          }
+        ],
+        "exam_questions": [
+          {
+            "id": 1,
+            "type": "mcq",
+            "question": "What advice did Sunil's uncle, Madhav Mantri, give him when Sunil asked for an India cap?",
+            "options": [
+              "He gave him two caps immediately",
+              "He told him there are no shortcuts and he must sweat to earn the India colours",
+              "He told him to stop playing cricket",
+              "He asked him to pay for the souvenir"
+            ],
+            "correct_index": 1,
+            "marks": 1,
+            "explanation": "Madhav Mantri taught Sunil integrity by insisting that India colours cannot be borrowed or gifted; they must be earned through hard work."
+          },
+          {
+            "id": 2,
+            "type": "mcq",
+            "question": "In standard note-making format, which of the following is strictly discouraged?",
+            "options": [
+              "Using recognized abbreviations",
+              "Writing in long, complete narrative sentences",
+              "Indenting sub-headings",
+              "Numbering points logically"
+            ],
+            "correct_index": 1,
+            "marks": 2,
+            "explanation": "Note-making requires condensed phrases and bullet points, strictly avoiding verbose full sentences."
+          },
+          {
+            "id": 3,
+            "type": "descriptive",
+            "question": "Write an elaborate 10-mark essay detailing the autobiography 'My First Steps' by Sunil Gavaskar. Highlight the two defining childhood incidents, explain the grammatical features of the text, and discuss the moral lessons taught by Nan-kaka, his mother, and Madhav Mantri.",
+            "marks": 10,
+            "answer_key": "1. The Hospital Incident: Born July 10, 1949. Uncle Nan-kaka spotted the earlobe hole. Next day baby switched with a fisherwoman's baby; frantic search saved him. 2. Mother's Cricket Match: Hit on the nose by a tennis ball; bleeding nose; washed face and continued bowling, fostering resilience. 3. Grammatical Features: Rich use of compound words (earlobe, fisherwoman, eagle-eyed) and Simple Past Tense for completed actions and habits ('used to'/'would'). 4. Moral Lessons: Vigilance and observation (Nan-kaka), maternal dedication and sportsmanship (mother), and integrity with no shortcuts to success (Madhav Mantri).",
+            "essential_keywords": [
+              "July 10 1949",
+              "Nan-kaka",
+              "earlobe hole",
+              "fisherwoman",
+              "tennis ball",
+              "bleeding nose",
+              "compound words",
+              "Simple Past",
+              "Madhav Mantri",
+              "sweat to earn",
+              "shortcuts"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

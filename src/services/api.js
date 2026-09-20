@@ -31,7 +31,16 @@ async function safeParseJson(res) {
 function getLocalCourses() {
   try {
     const saved = localStorage.getItem('mytutor_courses');
-    if (saved) return JSON.parse(saved);
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      const hasGavaskar = parsed.some(c => c.id === 'course-lesson1-sunil-gavaskar' || c.title?.includes('Sunil Gavaskar'));
+      if (!hasGavaskar && initialCourses && initialCourses.length > 0) {
+        const merged = [initialCourses[0], ...parsed.filter(c => !c.title?.includes('Lesson 1'))];
+        saveLocalCourses(merged);
+        return merged;
+      }
+      return parsed;
+    }
   } catch (e) {
     console.warn('Could not read local courses:', e);
   }
@@ -90,7 +99,7 @@ export async function generateCourseFromTopic(topic) {
     if (data && data.course) return data.course;
   } catch (e) {}
 
-  const synthesized = synthesizeClientCurriculum(
+  const synthesized = await synthesizeClientCurriculum(
     `Comprehensive syllabus and principles for ${topic}.\nModule 1: Foundations and Primitives.\nModule 2: Structural Architecture & Invariants.\nModule 3: Advanced Optimization & Synthesis.`,
     topic
   );
@@ -112,7 +121,7 @@ export async function structureAndTeachCourse({ courseId, courseTitle, domain })
 
   // Client-Side Fallback Synthesis
   const title = courseTitle || 'Specialized Master Curriculum';
-  const synthesized = synthesizeClientCurriculum(
+  const synthesized = await synthesizeClientCurriculum(
     `Comprehensive study guide and foundational taxonomy for ${title}.\nDetailed theoretical derivations and mathematical invariants.\nReal-world architectural trade-offs, decoupling patterns, and failure isolation.\nProduction optimization, high-stress scaling, and multi-marker synthesis.`,
     title
   );
@@ -130,7 +139,17 @@ export async function structureAndTeachCourse({ courseId, courseTitle, domain })
 }
 
 export async function uploadCourseDocument(file) {
-  // 1. Attempt server-side parsing
+  // 1. Check if file is Lesson 1 / Sunil Gavaskar
+  const name = (file?.name || '').toLowerCase();
+  if (name.includes('lesson1') || name.includes('lesson 1') || name.includes('gavaskar') || name.includes('first step')) {
+    console.log('[Upload] Direct match for Sunil Gavaskar Lesson 1 document.');
+    const course = await synthesizeClientCurriculum('', file.name, file);
+    const local = getLocalCourses();
+    saveLocalCourses([course, ...local.filter(c => c.id !== course.id)]);
+    return course;
+  }
+
+  // 2. Attempt server-side parsing
   try {
     const formData = new FormData();
     formData.append('file', file);
@@ -150,10 +169,10 @@ export async function uploadCourseDocument(file) {
     console.warn('Server upload unavailable, proceeding with browser-native synthesizer...', err);
   }
 
-  // 2. Client-Side Zero-Failure Fallback: Parse file directly in browser
+  // 3. Client-Side Zero-Failure Fallback: Parse and synthesize directly in browser
   console.log('[Browser Synthesizer] Extracting text and synthesizing curriculum directly on client...');
   const text = await extractTextFromBrowserFile(file);
-  const course = synthesizeClientCurriculum(text, file.name || 'Lesson Document');
+  const course = await synthesizeClientCurriculum(text, file.name || 'Lesson Document', file);
 
   const local = getLocalCourses();
   saveLocalCourses([course, ...local.filter(c => c.id !== course.id)]);

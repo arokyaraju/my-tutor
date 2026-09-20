@@ -1134,6 +1134,39 @@ export const COURSE_DOMAINS = [
         focus: "Dayan/Bayan Syllables (Dha, Dhin, Ge, Na), Peshkar, Kaida theme with variations, Rela cascades, and Mridangam Korvai mathematics."
       }
     ]
+  },
+  {
+    id: "domain-languages-literature",
+    number: 25,
+    name: "Languages, Linguistics & Literature",
+    shortName: "Languages & Literature",
+    emoji: "📖",
+    iconName: "BookOpen",
+    gradient: "linear-gradient(135deg, #10b981 0%, #059669 100%)",
+    accentColor: "#10b981",
+    description: "Autobiographical narratives, literary prose, applied grammar (past tense, syntax), compound words, and note-making study skills.",
+    courses: [
+      {
+        id: "course-lesson1-sunil-gavaskar",
+        title: "Lesson 1: My First Steps - Sunil Gavaskar",
+        focus: "Autobiographical analysis of Sunil Gavaskar's childhood, hospital mix-up at birth saved by Nan-kaka, playing tennis-ball cricket with his mother, compound words, simple past tense grammar, and note-making study skills."
+      },
+      {
+        id: "lit-compound-words-morphology",
+        title: "Applied Linguistics: Compound Words, Phonetics & Morphology",
+        focus: "Open, hyphenated, and closed compound word structures, morphological derivation, and vocabulary enrichment."
+      },
+      {
+        id: "lit-grammar-tenses-syntax",
+        title: "English Grammar Mastery: Past Tense, Habitual 'Would/Used To' & Syntax",
+        focus: "Regular and irregular past tense verbs, negative and interrogative transformations with 'did', and syntactic structure."
+      },
+      {
+        id: "lit-study-skills-notemaking",
+        title: "Advanced Study Skills: Note-Making, Abbreviations & Textual Summaries",
+        focus: "Hierarchical numbering, indenting, standard abbreviations, and condensing prose into exam revision notes."
+      }
+    ]
   }
 ];
 
