@@ -61,18 +61,18 @@ export default function DocumentUploadModal({
     try {
       setTimeout(() => {
         setUploadState('parsing');
-        setProgressMsg('Extracting text and tabular data (PDF / Mammoth / XLSX)...');
-      }, 700);
+        setProgressMsg('Extracting authentic text, chapter headings and concepts from document...');
+      }, 500);
 
       setTimeout(() => {
         setUploadState('structuring');
-        setProgressMsg('Structuring curriculum into Basics, Advanced & Expert tiers with SSML & 1/2/5/10 markers...');
-      }, 1600);
+        setProgressMsg('Synthesizing 3-Tier Curriculum (Basics, Advanced, Expert) strictly grounded in original content...');
+      }, 1400);
 
       const course = await uploadCourseDocument(selectedFile);
 
       setUploadState('complete');
-      setProgressMsg('Curriculum generated successfully with full SSML whiteboard timeline!');
+      setProgressMsg(`Course "${course.title}" synthesized successfully with authentic notes, canvas diagrams & exams!`);
 
       setTimeout(() => {
         if (onCourseCreated) onCourseCreated(course);

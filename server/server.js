@@ -136,7 +136,8 @@ app.post('/api/courses/upload', upload.single('file'), async (req, res) => {
     res.json({
       status: 'success',
       message: 'Course material parsed and structured across 3 tiers successfully!',
-      course
+      course,
+      extractedText
     });
   } catch (err) {
     console.error('File upload & parsing error:', err);
